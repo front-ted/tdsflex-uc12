@@ -1,0 +1,380 @@
+
+
+body{
+  background: url('../imgs/bg.png') top no-repeat;
+  background-attachment: fixed;
+  /* background-size: 100%; */
+}
+.fundo-tecnicos{
+  border-bottom: none !important;
+}
+h1 i,
+h2 i,
+h3 i,
+h4 i {
+  font-weight: bold;
+}
+h3 {
+  margin-top: 50px;
+  margin-bottom: 20px;
+}
+h4 {
+  margin: 0px;
+  margin-top: 40px;
+}
+
+.pagina1 .img-responsive{
+  margin-top: 20px;
+}
+
+.head_tag, .body_tag{
+margin-left: 50px;
+}
+
+.cabecalho, .conteudo{
+  margin-left: 100px;
+}
+
+.pagina1 .legenda-imagem.fig12{
+  font-size: 10px !important;
+}
+
+.pagina1 li{
+  list-style-image: unset !important;
+}
+.bto-imprimir{
+  margin-right: 50px;
+}
+
+.bg1 .fundo-tecnicos{
+  border-bottom: none !important;
+  -webkit-box-shadow: 0px 0px 16px 0px rgba(0,0,0,0.29);
+  -moz-box-shadow: 0px 0px 16px 0px rgba(0,0,0,0.29);
+  box-shadow: 0px 0px 16px 0px rgba(0,0,0,0.29);
+  padding-left: 0;
+  padding-right: 0;
+}
+.pagina1 .bloco-cinza{
+  background: #ececec;
+  padding: 50px 140px;
+  -webkit-box-shadow: 0px 0px 16px 0px rgba(0,0,0,0.29);
+  -moz-box-shadow: 0px 0px 16px 0px rgba(0,0,0,0.29);
+  box-shadow: 0px 0px 16px 0px rgba(0,0,0,0.29);
+}
+.pagina1 .bloco-branco{
+  padding: 50px 140px;
+}
+.pagina1 .iconeimportante{
+  background-image: url('../imgs/ico_importante_atencao.png');
+  background-repeat: no-repeat;
+  background-position: left 10px center;
+  background-size: 170px 84px;
+  padding-left: 200px;
+}
+
+.pagina1 .iconedesafio{
+  background-image: url('../imgs/ico_desafio.png');
+  background-repeat: no-repeat;
+  background-position: 50% 15px;
+  background-size: 170px 84px;
+  padding: 20px;
+  padding-top: 100px;
+}
+
+.pagina1 .btn-topo {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 99;
+}
+
+.btn-topo-mobile{
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 99;
+}
+
+.pagina1 .caixacinza{
+  border-color:#ececec;
+  border: 2px;
+  background-color: #ececec;
+  border-radius: 1em;
+  z-index: 4;
+  position: relative;
+  margin-top: 25px;
+  padding-top: 20px;
+  margin-top: 70px;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-bottom: 25px;
+}
+.pagina1 .caixacinza p {
+  font-family: monospace;
+}
+.pagina1 .horizontal-line{
+  background-color:#2875C6;
+  width: 50em;
+  height:5px;
+  margin-top: 35px;
+  position: relative;
+}
+.pagina1 .textotag{
+  text-decoration: underline;
+ }
+
+ .pagina1 .bg-black {
+  background-color: black;
+  color: white;
+  
+}
+
+.pagina1 .divisaopag{
+  padding: unset;
+}
+.pagina1 .tagtext{
+  font-size: 20px;
+  padding: unset;
+
+ }
+ .pagina1 .caixabranca{
+  border-color:#ffff;
+  border: 2px;
+  background-color: #ffff;
+  border-radius: 1em;
+  z-index: 4;
+  position: relative;
+  margin-top: 25px;
+  padding-top: 20px;
+  margin-top: 70px;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-bottom: 25px;
+}
+
+.pagina1 .nav-tabs {
+  margin-left: 0;
+}
+.pagina1 figcaption {
+  text-align: center;
+  margin-top: 15px;
+}
+/* pagina2 */
+body.bg2{
+  
+  background: url('../imgs/background.png') no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+ 
+}
+
+.pagina2 pre {
+  padding: 0;
+  background: transparent;
+  border: none;
+  margin: 0;
+}
+
+
+.pagina2 .fundo-tecnicos{
+  border-bottom: none !important;
+}
+.pagina2 .pagina2 h1 i,
+.pagina2 .pagina2 h2 i,
+.pagina2 .pagina2 h3 i,
+.pagina2 .pagina2 h4 i {
+  font-weight: bold;
+}
+.pagina2 h3 {
+  margin-top: 50px;
+  margin-bottom: 20px;
+}
+/* .pagina2 h4 {
+  margin: 0px;
+  margin-top: 40px;
+} */
+.pagina2 h2, .pagina2 h3, .pagina2 h5, .pagina2 p, .pagina2 li{color: #fff;}
+.pagina2 .mt-20{margin-top: 20px;}
+.pagina2 .mt-40{margin-top: 40px;}
+.pagina2 .mt-60{margin-top: 60px;}
+
+.pagina2 .painel-abas{padding: 40px;}
+.pagina2 .nav-tabs{
+  margin-left: 0;
+}
+
+.pagina2 .carousel{
+  padding: 20px 40px;
+}
+.pagina2 .carousel-control.left{
+  left: -90px;
+  background: none;
+  color: #000;
+}
+.pagina2 .carousel-control.right{
+  right: -90px;
+  background: none;
+  color: #000;
+}
+.pagina2 .carousel-indicators{
+  bottom: 0;
+  margin-bottom: 0px;
+}
+.pagina2 .carousel-indicators .active{
+  background-color: #2875C6;
+}
+.pagina2 .carousel-indicators li{
+  border: 1px solid #2875C6;
+}
+
+.pagina2 .nav-tabs>li.active>a, .nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover {
+  color: #fff;
+  cursor: default;
+  background-color: #2875C6;
+  border: 1px solid #1d5591;
+  border-bottom-color: transparent;
+}
+
+.pagina2 .codigo-destaque{
+  background: #000;
+  color: #a39e9b;
+  display: block;
+  overflow-x: auto;
+  padding: 1em;
+}
+.pagina2 .code-destaque{
+  background-color: #071772 !important;
+}
+/* .pagina2 h4{margin-bottom: 20px;} */
+.pagina2 header{margin-top: 100px;}
+.pagina2 .grupo-imprimir button.bto-imprimir{
+  background: #fff;
+  color:#071772;
+}
+.pagina2 .img-inicio{
+  position: absolute;
+  left: 5%;
+  width: 25%;
+}
+.pagina2 div.inicio{
+  padding-left: 300px;
+}
+.pagina2 .panel-group p, .pagina2 .panel-group li{color: #337ab7;}
+.pagina2 li pre{font-size: 14px;}
+.pagina2 .panel-heading {
+  background-color: #f4f4f4 !important;
+  color: #256CB5 !important;
+  border-color: #256CB5 !important;
+}
+.pagina2 .caixa-destaque-livre,
+.pagina2 .caixa-destaque{
+  background-color: #fff;
+}
+.pagina2 .caixa-destaque-livre p,
+.pagina2 .caixa-destaque-livre li,
+.pagina2 .caixa-destaque p,
+.pagina2 .caixa-destaque li{color: #337ab7;}
+.pagina2 ul{
+  margin-left: 0;
+  margin-bottom: 0;
+}
+.pagina2 .icone-importante{
+  background-image: url('../imgs/ico_importante_atencao.png');
+  background-repeat: no-repeat;
+  background-position: left 10px center;
+  background-size: 170px 84px;
+  padding-left: 200px;
+}
+.pagina2 .icone-concluindo{
+  background-image: url('../imgs/ico_finalizando.png');
+  background-position: left 10px center;
+  background-repeat: no-repeat;
+  background-size: 174px 86px;
+  padding-left: 205px;
+}
+.pagina2 .icone-desafio{
+  background-image: url('../imgs/ico_desafio.png');
+  background-position: left 10px center;
+  background-repeat: no-repeat;
+  background-size: 186px 81px;
+  padding-left: 220px;
+}
+@media screen and (max-width: 980px){
+  .pagina2 .icone-importante, .pagina2 .icone-concluindo, .pagina2 .icone-desafio{
+    background-position: top 10px center;
+    padding-top: 100px;
+    padding-left: 30px;
+  }
+  .pagina2 .img-inicio{display: none;}
+  .pagina2 div.inicio{padding: 0;}
+}
+@media screen and (max-width: 480px){
+  .pagina2 .caixa-destaque code{
+    word-break: break-word;
+  }
+}
+
+figcaption {
+  color: white;
+  text-align: center;
+  margin-top: 10px;
+}
+
+
+
+/* pagina2 */
+
+@media screen and (max-width: 1024px){
+  .bloco-branco, .bloco-cinza{
+    padding: 50px 100px;
+  }
+}
+
+
+@media screen and (max-width: 450px){
+  .figura1desktop{
+      display: none;
+  }
+  .topodesktop{
+    display: none;
+  }
+  .caixa-destaque{
+    word-break: break-word;
+  }
+  .bloco-branco, .bloco-cinza{
+    padding: 50px;
+  }
+  ol {
+    margin-left: 0;
+    padding-left: 0;
+  }
+}
+
+@media screen and (min-width: 451px){
+    .figura1mobile{
+        display: none;
+    }
+    .topomobile{
+      display: none;  
+    }
+  }
+
+@media screen and (max-width: 980px){
+      .iconeimportante, .iconedesafio{
+        background-position: top 10px center;
+        padding-top: 100px;
+        padding-left: 30px;
+      }}
+      
+ @media screen and (max-width: 1000px){
+        .horizontal-line{
+          display: none;
+        }
+        .fundo-tecnicos {
+          margin: 0;
+          width: 100%;
+          max-width: 100%;
+        }
+      }

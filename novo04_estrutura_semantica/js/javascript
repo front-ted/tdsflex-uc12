@@ -1,0 +1,43 @@
+$(document).ready(function() {
+    $(window).scroll(function() {
+        if ($(this).scrollTop() > 100) {
+            $('#btn-topo').addClass('show');
+        } else {
+            $('#btn-topo').removeClass('show');
+        }
+    });
+    
+    $('#btn-topo').click(function() {
+        $('html, body').animate({scrollTop : 0}, 800);
+        return false;
+    });
+    if(window.location.search == '?page=2'){
+        
+        $('body').removeClass('bg1');
+        $('body').addClass('bg2');
+        $('html').css('background-color','transparent');
+        $('.fundo-tecnicos').css('background-color','transparent');
+        
+    }else{
+        $('body').removeClass('bg2');
+        $('body').addClass('bg1');
+        
+        $('html').css('background-color','transparent');
+        $('.fundo-tecnicos').css('background-color','#fff');
+    } 
+});
+
+$(document).ready(function() {
+    $(window).scroll(function() {
+        if ($(this).scrollTop() > 100) {
+            $('#btn-topomobile').addClass('show');
+        } else {
+            $('#btn-topomobile').removeClass('show');
+        }
+    });
+    
+    $('#btn-topomobile').click(function() {
+        $('html, body').animate({scrollTop : 0}, 800);
+        return false;
+    });
+});

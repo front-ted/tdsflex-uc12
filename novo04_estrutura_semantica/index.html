@@ -1,0 +1,2643 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:mso="urn:schemas-microsoft-com:office:office"
+  xmlns:msdt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+  <title>Estrutura semântica</title>
+
+  <!-- Bootstrap -->
+  <link href="../template/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../template/css/tecnicos_senac.css" rel="stylesheet">
+  <link href="../template/css/cores.css" rel="stylesheet">
+  <link href="../template/css/modal-100.css" rel="stylesheet">
+  <link href="../template/css/devibeans.min.css" rel="stylesheet">
+  <!--Extras - novas classes para facilitar-->
+  <link rel="stylesheet" href="../template/css/extras.css">
+  <link href="../template/css/sncload.css" rel="stylesheet">
+  <link href="../template/css/magnific-popup.css" rel="stylesheet">
+  <!-- referencia ao arquivo css com estilos especificos da pagina -->
+  <link href="css/custom.css" type="text/css" rel="stylesheet">
+  <link rel="stylesheet" href="editor-html-v1/assets/css/style.css">
+  <!-- css necessario para o print -->
+  <link href="../template/css/fa/css/font-awesome.min.css" type="text/css" rel="stylesheet">
+  <link href="../template/css/print.css" type="text/css" rel="stylesheet">
+  <link href="../template/fonts/roboto.css" type="text/css" rel="stylesheet">
+
+
+  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+      <script src="js/html5shiv.min.js"></script>
+      <script src="js/respond.min.js"></script>
+    <![endif]-->
+
+
+  <!--[if gte mso 9]><xml>
+<mso:CustomDocumentProperties>
+<mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x0023_Editor msdt:dt="string">Paulo Ricardo Soveral Junior</mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x0023_Editor>
+<mso:Order msdt:dt="string">46914400.0000000</mso:Order>
+<mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x0023_Author msdt:dt="string">Paulo Ricardo Soveral Junior</mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x0023_Author>
+<mso:ContentTypeId msdt:dt="string">0x010100393332CEE5C5294F9D2C3CF7CCDACBE5</mso:ContentTypeId>
+</mso:CustomDocumentProperties>
+</xml><![endif]-->
+</head>
+
+<body onLoad="Javascript:document.getElementById('sncloader').style.display='none';">
+  <!-- MARCA D´ÁGUA -->
+  <img src="../template/images/logo_senac_colorido.png" id="marcadaguaLogo">
+  <!-- /MARCA D´ÁGUA -->
+
+  <div id='sncloader' class='over-loader'>
+    <div class="over-cell">
+      <div id="sncload"></div>
+    </div>
+  </div>
+  <header id="topo" class="senac no-print">
+    <div class="header-tecnicos container">
+      <h1 id="nome-curso">Desenvolvimento de Sistemas</h1>
+      <div id="logo-senac"><img src="../template/images/logo-senac.png" alt="logo do senac"></div>
+    </div>
+    <div id="sombra"></div>
+  </header>
+
+  <div id="booklet" class="container fundo-tecnicos">
+    <header class="no-print">
+      <!-- BTO IMPRIMIR -->
+      <div class="grupo-imprimir no-print">
+        <button type="button" data-pdf="true" class="bto-imprimir" name="button">
+          <span class="fa fa-print"></span> <span>Imprimir</span>
+        </button>
+      </div>
+      <!-- /BTO IMPRIMIR -->
+    </header>
+    <!-- - - - - - - - - - - - - - - - não alterar acima - - - - - - - - - - - - -->
+    <section class="paginas">
+
+      <!-- - - - - - - - cada página é independente  - - - - - - - - - - -->
+      <div class="pagina pagina1">
+        <p class="acessivel no-print">Como sugestão, configure a opção de leitura de caracteres e de pontuação de seu
+          leitor de tela para o grau máximo de leitura, a fim de que os códigos disponibilizados neste material sejam
+          lidos corretamente. No caso do NVDA (NonVisual Desktop Access), para localizar a opção Grau de
+          pontuação/símbolos, acesse Preferências – Configurações – Fala. Altere o padrão Pouco para Tudo. Dessa forma,
+          o leitor passará a ler os segmentos de código em sua totalidade. </p>
+
+        <button id="btn-topo" class="btn-link btn-topo no-print" title="Voltar ao topo"> <img
+            src="imgs/bt_voltar_ao_topo_dsktp.svg" class="topodesktop"> </button>
+        <button id="btn-topomobile" class="btn-link btn-topo-mobile no-print" title="Voltar ao topo"> <img
+            src="imgs/bt_voltar_ao_topo_mobile.svg" class="topomobile"> </button>
+
+        <div class="bloco-branco">
+          <h2>Estrutura semântica: linguagens de marcação de conteúdo (HTML) para aplicações <i>web</i></h2>
+          <div class="horizontal-line mt-60 no-print">.</div>
+          <h3>Introdução</h3>
+          <p>A linguagem de marcação de hipertexto, ou somente HTML (<i>hypertext markup language</i>), como é
+            amplamente conhecida, é uma linguagem padrão para o desenvolvimento de páginas <i>web</i>, em que é
+            possível, por meio das chamadas <i>tags</i>, descrever a estrutura e o conteúdo de uma página. Veja que o
+            HTML não é considerado uma linguagem de programação, mas, sim, uma linguagem de marcação. </p>
+          <p>O HTML é uma linguagem interpretada por todos os navegadores de código aberto e considerada de simples
+            aprendizagem, uma vez que ela não depende da implementação de lógica de programação, porém tem fácil
+            interação com outras linguagens, como PHP (<i>hypertext preprocessor</i>), JavaScript e CSS (<i>cascading
+              style sheets</i>). Atualmente, o HTML encontra-se na versão 5, o chamado HTML5, com diversas novas
+            funcionalidades e compatibilidades.</p>
+          <p>Você pode desenvolver um arquivo com os padrões HTML5 no editor de texto de sua preferência, porém é
+            indicado e será utilizado o Visual Studio Code (VSCode) como editor padrão para desenvolver os exemplos
+            apresentados ao longo do conteúdo.</p>
+        </div>
+        <div class="bloco-cinza">
+          <h3>Editor para criação de arquivos HTML5</h3>
+          <p>Para desenvolver e editar códigos em HTML, é necessário o auxílio de um editor de texto ou um ambiente de
+            desenvolvimento integrado (IDE). Para trabalhar com HTML nesta unidade, será utilizado o VSCode, um editor
+            leve e poderoso que marca a sintaxe para a linguagem.</p>
+          <p>A seguir, veja um passo a passo para a instalação e configuração desse editor.</p>
+          <div>
+            <ol>
+              <li>Realizar o <i>download</i> do editor de acordo com seu sistema operacional. Para isso, basta digitar
+                em seu buscar “<i>Download</i> Visual Studio Code”.
+                <div class="hidden-lg hidden-md hidden-xs no-print">
+                  <p class="hidden-lg hidden-md no-print">Toque na imagem para ampliá-la.</p>
+                  <a target="_blank" href="imgs/01.png">
+                    <img src="imgs/01.png"
+                      class="img-responsive center-block mt-40 imprime-menor">
+                  </a>
+                  <figcaption>
+                    Figura 1 – <i>Site</i> para <i>download</i> do VSCode <br>
+                    Fonte: Senac EAD (2023)
+                  </figcaption>
+                  <p class="acessivel no-print">A imagem apresenta a visualizado da página de download do editor VSCode.
+                  </p>
+                </div>
+                <div class="figura1desktop hidden-sm">
+                  <img src="imgs/01.png"
+                    class="img-responsive center-block mt-40 imprime-menor print">
+                  <figcaption>
+                    Figura 1 – <i>Site</i> para <i>download</i> do VSCode <br>
+                    Fonte: Senac EAD (2023)
+                  </figcaption>
+                  <p class="acessivel no-print">A imagem apresenta a visualizado da página de download do editor VSCode.
+                  </p>
+                </div>
+                <div class="figura1mobile no-print">
+                  <p>Toque na imagem para ampliá-la.</p>
+                  <a href="imgs/01.png" target="_blank">
+                    <img src="imgs/fig_1_mobile.svg"
+                      class="img-responsive center-block mt-40 imprime-menor">
+                  </a>
+                  <figcaption>
+                    Figura 1 – <i>Site</i> para <i>download</i> do VSCode <br>
+                    Fonte: Senac EAD (2023)
+                  </figcaption>
+                  <p class="acessivel no-print">A imagem apresenta a visualizado da página de download do editor VSCode.
+                  </p>
+                </div>
+
+          </div>
+          </li>
+          </ol>
+        </div>
+        <div class="bloco-branco">
+          <ol>
+            <li>Agora, realize a instalação padrão do editor, clicando no executável que acabou de ser baixado.</li>
+            <li>Com o VSCode aberto, clique em <strong>Arquivo</strong> e depois em <strong>Adicionar pasta ao
+                Workspace</strong>.</li>
+            <li>Escolha a localização e o nome da pasta que você trabalhará.</li>
+            <li>Agora, com a pasta de trabalho já configurada, crie seu primeiro arquivo HTML. Para isso, clique sobre a
+              pasta com o botão direito e depois selecione <strong>Novo arquivo</strong>, como mostra a figura a seguir.
+              Não se esqueça de nomear o arquivo com a extensão HTML (exemplo: <strong>teste.html</strong>).
+              <div class="hidden-xs print"><img src="imgs/02.png"
+                  class="img-responsive center-block mt-40 imprime-menor"></div>
+              <p class="hidden-lg hidden-md hidden-sm no-print">Toque na imagem para ampliá-la.</p>
+              <a target="_blank" href="imgs/02.png" class="hidden-lg hidden-md hidden-sm no-print"><img
+                  src="imgs/02.png"
+                  class="img-responsive center-block mt-40 imprime-menor"></a>
+              <figcaption>
+                Figura 2 – Criação de arquivos no VSCode <br>
+                Fonte: Senac EAD (2023)
+              </figcaption>
+              <p class="acessivel no-print">A imagem apresenta a criação de um novo arquivo html dentro do VSCode,
+                mostrando a abertura de uma janela de opções quando se clica com o botão direito na pasta de trabalho,
+                liberando assim a opção de criar um novo arquivo.</p>
+            </li>
+            <li>Com seu arquivo HTML já criado, instale uma extensão no VSCode para interpretar esses códigos. Para
+              isso, clique no ícone da lateral esquerda do editor, denominado <strong>Extensões</strong>.</li>
+            <li>Agora pesquise por “HTML Preview” e clique em <strong>Instalar</strong>.
+              <img src="imgs/03.png"
+                class="img-responsive center-block mt-40 imprime-menor hidden-xs print">
+              <p class="hidden-lg hidden-md hidden-sm no-print">Toque na imagem para ampliá-la.</p>
+              <a target="_blank" href="imgs/03.png" class="hidden-lg hidden-md hidden-sm no-print"><img
+                  src="imgs/03.png"
+                  class="img-responsive center-block mt-40 imprime-menor"></a>
+              <figcaption>
+                Figura 3 – Extensão HTML Preview VSCode <br>
+                Fonte: Senac EAD (2023)
+              </figcaption>
+              <p class="acessivel no-print">A imagem apresenta a extensão necessária para a visualização do código html
+                dentro do VSCode, simulando a visualização de um navegador. Essa extensão se chama HTML Preview.</p>
+            </li>
+            <li>Essa extensão permite visualizar a página que for desenvolvida como em um navegador.</li>
+            <li>Para fazer a visualização do arquivo desenvolvido, utilize o atalho (com o arquivo em questão aberto)
+              <strong>Ctrl + Shift + V</strong>.
+              <img src="imgs/04.png"
+                class="img-responsive center-block mt-40 imprime-menor hidden-xs print">
+              <p class="hidden-lg hidden-md hidden-sm no-print">Toque na imagem para ampliá-la.</p>
+              <a href="imgs/04.png" target="_blank"
+                class="hidden-lg hidden-md hidden-sm no-print"><img src="imgs/04.png"
+                  class="img-responsive center-block mt-40 imprime-menor"></a>
+              <figcaption>
+                Figura 4 – Primeiro arquivo HTML5 VSCode <br>
+                Fonte: Senac EAD (2023)
+              </figcaption>
+              <p class="acessivel no-print">A imagem apresenta o arquivo html aberto, a fim de executar a combinação de
+                teclas para a pré-visualização do conteúdo criado.</p>
+            </li>
+          </ol>
+          <p>Para cada exemplo que vem a seguir no texto, crie um novo arquivo HTML, digite o código e teste a página
+            abrindo-a em um navegador (na pasta onde o arquivo foi salvo, dê um duplo clique no arquivo e ele abrirá no
+            <i>browser</i> padrão).
+          </p>
+        </div>
+        <div class="bloco-cinza">
+          <h3><i>Tags</i></h3>
+          <p>Em sua estrutura básica, o HTML trabalha com as chamadas <i>tags</i>, sendo estas responsáveis por
+            comunicar o navegador sobre a estrutura de um site HTML. As <i>tags</i> são interpretadas pelo navegador e
+            sempre são declaradas dentro de sinais de maior e menor, da seguinte forma: <strong>&lt;tag&gt</strong>.</p>
+          <p>As <i>tags</i> podem, ou não, necessitar de fechamento, atendendo à seguinte característica:</p>
+          <div class="caixabranca mt-40">
+            <p class="text-center"><i>Tag</i> com fechamento: </p>
+            <p class="text-center bg-black"><strong>&lt;tag&gt; &lt;/tag&gt</strong> </p>
+            <p class="text-center">onde <strong>&lt;tag&gt</strong> é a abertura e <strong>&lt;/tag&gt</strong> é o
+              fechamento.</p>
+            <p class="text-center"><i>Tag</i> sem fechamento (ou autofechamento): </p>
+            <p class="text-center bg-black"><strong>&lt;tag&gt</strong></p>
+          </div>
+          <p>Veja, na figura a seguir, exemplo de <i>tags</i> com e sem fechamento. Não se preocupe, pois ao longo do
+            conteúdo serão abordadas as funcionalidades de cada tag dentro da estrutura do HTML.</p>
+          <img src="imgs/05.png"
+            class="img-responsive center-block mt-40 imprime-menor hidden-xs print">
+          <p class="hidden-lg hidden-md hidden-sm no-print">Toque na imagem para ampliá-la.</p>
+          <a href="imgs/05.png" target="_blank"
+            class="hidden-lg hidden-md hidden-sm no-print"><img src="imgs/05.png"
+              class="img-responsive center-block mt-40 imprime-menor"></a>
+          <figcaption>
+            Figura 5 – Tags básicas HTML5 <br>
+            Fonte: Senac EAD (2023)
+          </figcaption>
+          <p class="acessivel no-print">A imagem apresenta uma estrutura básica com as tags HTML, a fim de demonstrar a
+            existência, ou não, do fechamento de cada tag. Demonstra a tag &lt;h3> como um exemplo de tag com fechamento
+            e
+            a tag &lt;br/> como exemplo de tag sem fechamento.</p>
+        </div>
+        <div class="bloco-branco">
+          <h3>Comentários</h3>
+          <p>Observando a figura anterior, é possível ver também os comentários (letras em verde) feitos dentro do
+            código HTML. Cada linguagem tem a própria maneira de declarar um comentário. No caso do HTML, isso ocorre da
+            seguinte forma:</p>
+          <div class="caixacinza mt-40">
+            <div class="row">
+              <div class="col-lg-3 col-sm-3 col-xs-4">
+                <p class="text-center bg-black"> <strong>&lt!--</strong></p>
+              </div>
+              <div class="col-lg-9 col-sm-9 col-xs-8">
+                <p>(este é o sinal de abertura de um comentário)</p>
+              </div>
+              <div class="col-lg-3 col-sm-3 col-xs-4">
+                <p class="text-center bg-black"> <strong> --&gt </strong></p>
+              </div>
+              <div class="col-lg-9 col-sm-9 col-xs-8">
+                <p>(este é o sinal de fechamento de um comentário)</p>
+              </div>
+              <div class="col-lg-12 col-sm-12 col-xs-12">
+                <p class="text-center bg-black"><strong>&lt!-- Texto do comentário --&gt</strong></p>
+              </div>
+
+            </div>
+
+          </div>
+          <img src="imgs/fig_6_dsktp.svg"
+            class="img-responsive center-block mt-40 imprime-menor hidden-xs print">
+          <figcaption>
+            Figura 6 – Comentários HTML5 <br>
+            Fonte: Senac EAD (2023)
+          </figcaption>
+          <p class="acessivel no-print">A imagem apresenta a estrutura de um comentário HTML, mostrando abertura, texto
+            do comentário e fechamento. Utiliza setas para demonstrar a localização.</p>
+          <p>Adiante, serão abordadas as <i>tags</i> básicas do HTML5.</p>
+        </div>
+        <div class="bloco-cinza">
+          <h3><i>Tags</i> básicas do HTML</h3>
+          <p>Agora que você já conhece o conceito básico das <i>tags</i>, veja quais são as mais básicas (porém
+            importantes) que formam a estrutura do HTML.</p>
+          <div class="caixabranca mt-40">
+            <div class="row">
+              <div class="col-lg-3 col-sm-3 col-xs-4 divisaopag">
+                <p class="tagtext text-center bg-black"><strong>&lt;html&gt;</strong></p>
+              </div>
+              <div class="col-lg-9 col-sm-9 col-xs-8 ">
+                <p>Define a página HTML. É a <i>tag</i> raiz, ou seja, todas as outras <i>tags</i> da página devem estar
+                  entre <strong> &lt;html&gt;</strong> e <strong> &lt;/html&gt;</strong>.</p>
+              </div>
+              <div class="col-lg-3 col-sm-3 col-xs-4 divisaopag">
+                <p class="tagtext text-center bg-black"><strong>&lt;head&gt;</strong></p>
+              </div>
+              <div class="col-lg-9 col-sm-9 col-xs-8">
+                <p>É a área onde se inclui o título da página (que aparecerá no navegador) e as informações de
+                  metadados, necessárias para recursos da página, mas que não aparecem na tela.</p>
+              </div>
+              <div class="col-lg-3 col-sm-3 col-xs-4 divisaopag">
+                <p class="tagtext text-center bg-black"><strong>&lt;body&gt;</strong></p>
+              </div>
+              <div class="col-lg-9 col-sm-9 col-xs-8">
+                <p>É o corpo da página. É entre <strong>&lt;body&gt;</strong> e <strong>&lt;/body&gt;</strong> que
+                  estará presente o conteúdo da página.</p>
+              </div>
+            </div>
+
+          </div>
+          <p>No próximo trecho, veja a estrutura HTML de forma básica, utilizando as tags citadas</p>
+          <pre>
+              <code class="language-html">
+&lt;!DOCTYPE html&gt; &lt;!-- Tag especial que define o HTML5 --&gt;
+  &lt;html&gt;
+    &lt;head&gt; 
+        &lt;!-- Cabeçalho --&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;!-- Conteúdo --&gt;
+    &lt;/body&gt;
+  &lt;/html&gt;
+            </code>
+            </pre>
+        </div>
+        <div class="bloco-branco">
+          <h3>Atributos</h3>
+          <p>É possível entender os atributos como uma informação adicional que se passa para a <i>tag</i>. Dessa
+            maneira, a <i>tag</i> pode interpretar configurações de forma correta. Por exemplo, na <i>tag</i> de<strong>
+              &lt;img&gt;</strong>, sabe-se que ela é responsável por exibir uma imagem, porém é preciso de um atributo,
+            no caso o <strong>src</strong>, para indicar onde essa imagem está armazenada, da seguinte forma:</p>
+          <pre>
+              <code class="language-html">
+            &lt;img src = "local/imagem.png"/>;
+              </code>
+            </pre>
+          <p>Note que os atributos são sempre definidos dentro da <i>tag</i> de abertura, como mostra a figura do
+            exemplo a seguir (não se preocupe com as funcionalidades de cada <i>tag</i> ainda, pois isso será visto ao
+            longo do conteúdo).</p>
+          <img src="imgs/fig_7_dsktp.svg"
+            class="img-responsive center-block mt-40 imprime-menor hidden-xs print">
+          <p class="hidden-lg hidden-md hidden-sm no-print">Toque na imagem para ampliá-la.</p>
+          <a target="_blank" href="imgs/fig_7_dsktp.svg"
+            class="hidden-lg hidden-md hidden-sm no-print">
+            <img src="imgs/fig_7_dsktp.svg"
+              class="img-responsive center-block mt-40 imprime-menor">
+          </a>
+          <figcaption>
+            Figura 7 – Exemplo de atributos <br>
+            Fonte: Senac EAD (2023)
+          </figcaption>
+          <p class="acessivel no-print">A imagem apresenta uma estrutura didática para demonstrar o que é o atributo
+            dentro da abertura de uma tag, utilizando como exemplo a tag < p> e o atributo title.</p>
+          <p>Os atributos podem, ainda, ser separados em dois grupos, os chamados atributos globais e os atributos
+            específicos. </p>
+          <h4>Atributos globais</h4>
+          <p>São aqueles a que todas as <i>tags</i> têm acesso. Em outras palavras, podem ser implementados em qualquer
+            <i>tag</i>, por exemplo, o atributo <strong>title</strong>. Os principais atributos globais são os listados
+            a seguir.
+          </p>
+          <div class="no-print" aria-hidden="true">
+            <p>Clique ou toque para visualizar o conteúdo.</p>
+            <div class="panel-group gaitinha" id="accordion" role="tablist" aria-multiselectable="true">
+              <div class="panel panel-default">
+                <div class="panel-heading" role="tab" id="headingOne">
+                  <h4 class="panel-title">
+                    <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne"
+                      aria-expanded="true" aria-controls="collapseOne">
+                      Class
+                    </a>
+                  </h4>
+                </div>
+                <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+                  <div class="panel-body">
+                    <p>Define uma classe CSS para estilização do elemento.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="panel panel-default">
+                <div class="panel-heading" role="tab" id="headingTwo">
+                  <h4 class="panel-title">
+                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion"
+                      href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                      Id
+                    </a>
+                  </h4>
+                </div>
+                <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                  <div class="panel-body">
+                    <p>Identifica um elemento na página. Recomenda-se que o valor para esse atributo seja único para
+                      cada elemento na página.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="panel panel-default">
+                <div class="panel-heading" role="tab" id="headingThree">
+                  <h4 class="panel-title">
+                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion"
+                      href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                      Style
+                    </a>
+                  </h4>
+                </div>
+                <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+                  <div class="panel-body">
+                    <p>Define um estilo em CSS. </p>
+                  </div>
+                </div>
+              </div>
+              <div class="panel panel-default">
+                <div class="panel-heading" role="tab" id="heading4">
+                  <h4 class="panel-title">
+                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse4"
+                      aria-expanded="false" aria-controls="collapse4">
+                      Title
+                    </a>
+                  </h4>
+                </div>
+                <div id="collapse4" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading4">
+                  <div class="panel-body">
+                    <p>Define informação extra para o elemento (geralmente um texto que aparece quando se passa o
+                      <i>mouse</i> sobre o elemento na página).
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="panel panel-default">
+                <div class="panel-heading" role="tab" id="heading5">
+                  <h4 class="panel-title">
+                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse5"
+                      aria-expanded="false" aria-controls="collapse5">
+                      Tabindex
+                    </a>
+                  </h4>
+                </div>
+                <div id="collapse5" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading5">
+                  <div class="panel-body">
+                    <p>Ordem de alcance da tecla <strong>Tab</strong> para navegar entre os elementos da página.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="acessivel print">
+            <p>Class</p>
+            <p>Define uma classe CSS para estilização do elemento.</p>
+            <p>Id</p>
+            <p>Identifica um elemento na página. Recomenda-se que o valor para esse atributo seja único para cada
+              elemento na página.</p>
+            <p>Style</p>
+            <p>Define um estilo em CSS.</p>
+            <p>Title</p>
+            <p>Define informação extra para o elemento (geralmente um texto que aparece quando se passa o mouse sobre o
+              elemento na página).</p>
+            <p>Tabindex</p>
+            <p>Ordem de alcance da tecla Tab para navegar entre os elementos da página.</p>
+          </div>
+
+          <h4>Atributos específicos</h4>
+          <p>São aqueles que só podem ser implementados em <i>tags</i> específicas, por exemplo, o atributo
+            <strong>action</strong>, presente na <i>tag</i> de formulário que você verá mais adiante.
+          </p>
+          <div class="caixa-destaque iconeimportante borda-primaria-03 mt-40">
+            <p>O valor de um atributo é sempre delimitado por aspas duplas (") ou aspa simples ('), e a aspa de abertura
+              deve ser igual à de fechamento (ou seja, algo como "valor' não é válido, mas "valor" e 'valor' sim).</p>
+          </div>
+
+          <h3><i>Tags</i> de conteúdos</h3>
+          <p>Da mesma forma que se conta com <i>tags</i> básicas e estruturais, há também as <i>tags</i> específicas
+            para a introdução de conteúdo dentro do HTML, sendo elas as mencionadas a seguir.</p>
+          <h4><i>Tags</i> para títulos</h4>
+          <p>Essas <em>tags</em> são representadas dentro do HTML5 pela letra “h” com variações que vão de
+            <b>&lt;h1&gt;&lt;/h1&gt;</b>
+            até <b>&lt;h6&gt;&lt;/h6&gt;</b>, sendo o maior número inversamente proporcional ao tamanho da fonte, ou
+            seja, <b>h1</b> é
+            título com maior fonte, enquanto <b>h6</b> é o título com menor fonte. A imagem a seguir mostra a utilização
+            das
+            <em>tags</em> de títulos, partindo da maior para a menor.
+          </p>
+          <img src="imgs/08.png" class="img-responsive center-block mt-40 imprime-menor hidden-xs print">
+          <p class="hidden-lg hidden-md hidden-sm no-print">Toque na imagem para ampliá-la.</p>
+          <a target="_blank" href="imgs/08.png"
+            class="hidden-lg hidden-md hidden-sm no-print">
+            <img src="imgs/08.png"
+              class="img-responsive center-block mt-40 imprime-menor">
+          </a>
+          <figcaption>
+            Figura 8 – <i>Tags</i> de títulos HTML5 <br>
+            Fonte: Senac EAD (2023)
+          </figcaption>
+          <p class="acessivel no-print">A imagem mostra a escrita da palavra “título”, utilizando as tags de título do
+            HTML5, em um total de 6 linhas, em que a primeira é a maior (h1) e a última a menor (h6).</p>
+          <p>Na figura a seguir, é possível ver como a imagem anterior fica quando implementada em termos de código
+            HTML5.</p>
+          <img src="imgs/09.png" class="img-responsive center-block mt-40 imprime-menor hidden-xs print">
+          <p class="hidden-lg hidden-md hidden-sm no-print">Toque na imagem para ampliá-la.</p>
+          <a target="_blank" href="imgs/09.png"
+            class="hidden-lg hidden-md hidden-sm no-print">
+            <img src="imgs/09.png"
+              class="img-responsive center-block mt-40 imprime-menor">
+          </a>
+          <figcaption>
+            Figura 9 – <i>Tags</i> de títulos HTML5 código <br>
+            Fonte: Senac EAD (2023)
+          </figcaption>
+          <p class="acessivel no-print">Na imagem, há a representação em termos de código da figura anterior, onde
+            começa com a tag h1 e escrita “Título h1” e vai até a tag h6 com a mesma escrita dentro da tag.</p>
+          <h4><i>Tags</i> para textos</h4>
+          <p>As <i>tags</i> dedicadas a estruturas textuais dentro do HTML5 são amplamente utilizadas e têm a
+            funcionalidade de definir características para os textos. Agora, veja quais são essas <i>tags</i>.</p>
+          <div class="caixacinza mt-40">
+            <div class="row">
+              <div class="col-lg-3 col-sm-3 col-xs-4 divisaopag">
+                <p class="text-center bg-black"><strong>&lt;p> </strong></p>
+              </div>
+              <div class="col-lg-9 col-sm-9 col-xs-8">
+                <p>É responsável por definir um parágrafo, recebendo o texto que o compõe.</p>
+              </div>
+              <div class="col-lg-3 col-sm-3 col-xs-4 divisaopag">
+                <p class="text-center bg-black"> <strong>&lt;b> </strong></p>
+              </div>
+              <div class="col-lg-9 col-sm-9 col-xs-8">
+                <p>É a <i>tag</i> que transforma em negrito o texto que se encontra dentro dela. </p>
+              </div>
+              <div class="col-lg-3 col-sm-3 col-xs-4 divisaopag">
+                <p class="text-center bg-black"><strong>&lt;strong> </strong></p>
+              </div>
+              <div class="col-lg-9 col-sm-9 col-xs-8">
+                <p>É semelhante à <i>tag</i> <strong> &lt;b> </strong>, porém, por apresentar um estado lógico, permite
+                  que diversas outras configurações sejam feitas dentro das características dela.</p>
+              </div>
+              <div class="col-lg-3 col-sm-3 col-xs-4 divisaopag">
+                <p class="text-center bg-black"> <strong>&lt;i> </strong></p>
+              </div>
+              <div class="col-lg-9 col-sm-9 col-xs-8">
+                <p>É a <i>tag</i> que transforma em itálico o texto que se encontra dentro dela. </p>
+              </div>
+              <div class="col-lg-3 col-sm-3 col-xs-4 divisaopag">
+                <p class="text-center bg-black"><strong>&lt;em> </strong></p>
+              </div>
+              <div class="col-lg-9 col-sm-9 col-xs-8">
+                <p>É a <i>tag</i> que, assim como a <strong>&lt;i> </strong> , mantém o texto em itálico, porém dá
+                  ênfase no conteúdo.</p>
+              </div>
+              <div class="col-lg-3 col-sm-3 col-xs-4 divisaopag">
+                <p class="text-center bg-black"><strong>&lt;span> </strong></p>
+              </div>
+              <div class="col-lg-9 col-sm-9 col-xs-8">
+                <p>É um <i>container</i> de texto que, diferente de <strong> &lt;p></strong>, não quebra linha (e por
+                  isso é classificado como <i>tag inline</i>). É geralmente utilizado para marcar parte de um texto ou
+                  de um documento.</p>
+              </div>
+              <div class="col-lg-3 col-sm-3 col-xs-4 divisaopag">
+                <p class="text-center bg-black"><strong>&lt;br/> </strong></p>
+              </div>
+              <div class="col-lg-9 col-sm-9 col-xs-8">
+                <p>É uma <i>tag</i> com autofechamento que é responsável por aplicar uma quebra de linha no texto.</p>
+              </div>
+              <div class="col-lg-3 col-sm-3 col-xs-4 divisaopag">
+                <p class="text-center bg-black"><strong>&lt;hr/> </strong> </p>
+              </div>
+              <div class="col-lg-9 col-sm-9 col-xs-8">
+                <p>Cria uma linha divisória horizontal.</p>
+              </div>
+              <div class="col-lg-3 col-sm-3 col-xs-4 divisaopag">
+                <p class="text-center bg-black"><strong>&lt;a> </strong> </p>
+              </div>
+              <div class="col-lg-9 col-sm-9 col-xs-8">
+                <p>Define que determinado texto é um <i>link</i> e deve conter o atributo <strong>href</strong>, o qual
+                  informa o endereço desse <i>link</i></p>
+              </div>
+
+            </div>
+          </div>
+          <p>No trecho a seguir, veja a implementação das <i>tags</i> de texto em uma estrutura básica de HTML5. Leia
+            a descrição de cada <i>tag</i> e observe no código como elas estão aplicadas na estrutura. </p>
+          <pre>
+              <code class="language-html">
+&lt;html>
+    &lt;head>
+        &lt;title>Título&lt;/title>
+    &lt;/head>
+    &lt;body>
+        &lt;h3>Este é o título do nosso texto&lt;/h3>
+        &lt;p>
+        &lt;!-- aqui temos um parágrafo -->    
+        &lt;/p>
+        &lt;p>
+            &lt;strong>Agora um texto em negrito&lt;/strong>
+            &lt;em>Agora um texto em itálico</em>
+        &lt;/p>
+        &lt;hr/> &lt;!-- linha de separação -->
+        &lt;span>
+            Texto Final.
+        &lt;/span>
+    &lt;/body>
+&lt;/html>
+              </code>
+            </pre>
+          <p>Na próxima figura, veja como esse trecho de código é apresentado ao usuário final, quando interpretado
+            pelo navegador.</p>
+          <img src="imgs/10.png"
+            class="img-responsive center-block mt-40 imprime-menor hidden-xs print">
+          <p class="hidden-lg hidden-md hidden-sm no-print">Toque na imagem para ampliá-la.</p>
+          <a href="imgs/10.png" target="_blank"
+            class="hidden-lg hidden-md hidden-sm no-print"><img src="imgs/10.png"
+              class="img-responsive center-block mt-40 imprime-menor"></a>
+          <figcaption>
+            Figura 10 – <i>Tags</i> de texto HTML5 <br>
+            Fonte: Senac EAD (2023)
+          </figcaption>
+          <p class="acessivel no-print">A imagem apresenta o código html visto na imagem anterior, interpretado pelo
+            navegador.</p>
+          <h3><i>Tag</i> de hyperlink </h3>
+          <p>A expressão “hipertexto” está relacionada com a capacidade de ligar um conteúdo a outro por meio de
+            <i>hyperlinks</i>. Assim, a <i>tag</i> <strong>&lt;a></strong> é de grande importância não só no HTML como
+            em toda a Internet, pois, por meio dela, pode-se definir a ligação a outra página. O atributo mais
+            importante é o <strong>href</strong>, no qual se define a qual página se quer que o <i>hyperlink</i> vá.
+            Veja, no exemplo a seguir, um <i>link</i> com <strong>&lt;a></strong> que aponta para o <i>site</i> do
+            Senac EAD.
+          </p>
+          <pre>
+              <code class="language-html">
+&lt;!DOCTYPE html>
+    &lt;html>
+      &lt;body>
+        &lt;h1>Usando Hyperlink</h1>
+        &lt;a href="https://www.ead.senac.br">Link para a página do Senac EAD&lt;/a>
+      &lt;/body>
+    &lt;/html>
+              </code>
+            </pre>
+          <p>Escreva o código usando o editor VSCode, salve o arquivo, abra-o em um navegador e experimente clicar no
+            <i>link</i> que aparece na página.
+          </p>
+          <p>O <i>link</i> pode se referir a uma página local, como no exemplo a seguir, em que se tem uma página HTML
+            chamada <strong>teste.html</strong> na mesma pasta da página criada.</p>
+          <pre>
+              <code class="language-html">
+&lt;!DOCTYPE html>
+    &lt;html>
+      &lt;body>
+        &lt;h1>Apontando para outra página da pasta&lt;/h1>
+        &lt;a href="teste.html">Vamos para a página Teste&lt;/a>
+      &lt;/body>
+    &lt;/html>
+              </code>
+            </pre>
+          <p>Outra possibilidade é usar <strong>&lt;a></strong> para apontar para uma seção de uma página com bastante
+            conteúdo (um texto com termos de uso de um <i>software</i>, por exemplo). Para isso, usa-se “#” no
+            endereço.</p>
+          <pre>
+              <code class="language-html">
+&lt;a href="#secao2">Ir para a seção 2&lt;/a>
+    &lt;p>
+       &lt;!-- algum texto bem extenso-->
+    &lt;/p>
+&lt;h2 id="secao2">Seção 2&lt;/h2>
+    &lt;p>
+       &lt;!-- outro texto bem extenso-->
+    &lt;/p>
+              </code>
+            </pre>
+          <p>Por padrão, <i>links</i> textuais ficam sublinhados e em azul; quando visitados, tornam-se roxos.</p>
+          <p>Imagens podem ser usadas como <i>hyperlinks</i>, como mostra o trecho a seguir:</p>
+          <pre>
+              <code class="language-html">
+&lt;a href="teste.html">
+    &lt;img src="imagem-teste.jpg" alt="teste"/>
+&lt;/a>
+              </code>
+            </pre>
+          <h3><i>Tags</i> de listas</h3>
+          <p>Quando se fala em organização de listas em HTML5, tem-se à disposição três tipos de listas, sendo elas:
+            não ordenadas, ordenadas e de definição, cada uma sendo representa por suas respectivas <i>tags</i>. Veja
+            a seguir.</p>
+          <div class="no-print" aria-hidden="true">
+            <p>Clique ou toque para visualizar o conteúdo.</p>
+            <div class="panel-group gaitinha" id="accordion4" role="tablist" aria-multiselectable="true">
+              <div class="panel panel-default">
+                <div class="panel-heading" role="tab" id="heading6">
+                  <h4 class="panel-title">
+                    <a role="button" data-toggle="collapse" data-parent="#accordion4" href="#collapse6"
+                      aria-expanded="true" aria-controls="collapse6">
+                      Lista não ordenada
+                    </a>
+                  </h4>
+                </div>
+                <div id="collapse6" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="heading6">
+                  <div class="panel-body">
+                    <i>Tag</i> <strong>&lt;ul></strong> para construir a lista e <i>tag</i> <strong>&lt;li></strong>
+                    para cada linha dentro da lista. Veja o exemplo no trecho a seguir.
+                    <pre>
+                  <code class="language-html">
+                    &lt;!DOCTYPE html>
+                      &lt;html>
+                          &lt;head>
+                              &lt;title>Lista não ordenada HTML5&lt;/title>
+                          &lt;/head>
+                          &lt;body>
+                              &lt;ul>
+                                  &lt;li>Funcionário 1&lt;/li>
+                                  &lt;li>Funcionário 2&lt;/li>
+                              &lt;/ul>        
+                          &lt;/body>
+                      &lt;/html>
+                  </code>
+                </pre>
+                  </div>
+                </div>
+              </div>
+              <div class="panel panel-default">
+                <div class="panel-heading" role="tab" id="heading7">
+                  <h4 class="panel-title">
+                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion4"
+                      href="#collapse7" aria-expanded="false" aria-controls="collapse7">
+                      Lista ordenada
+                    </a>
+                  </h4>
+                </div>
+                <div id="collapse7" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading7">
+                  <div class="panel-body">
+                    <i>Tag</i> <strong>&lt;ol></strong> para construir a lista e tag <strong>&lt;li></strong> para
+                    cada linha dentro da lista. Veja o exemplo no trecho a seguir.
+                    <pre>
+                  <code class="language-html">
+&lt;!DOCTYPE html>
+  &lt;html>
+      &lt;head>
+           &lt;title> Lista ordenada HTML5</title>
+      &lt;/head>
+      &lt;body>
+          &lt;ol>
+              &lt;li>Funcionário 1&lt;/li>
+              &lt;li>Funcionário 2&lt;/li>
+          &lt;/ol>              
+      &lt;/body>
+  &lt;/html>
+                  </code>
+                </pre>
+                  </div>
+                </div>
+              </div>
+              <div class="panel panel-default">
+                <div class="panel-heading" role="tab" id="heading8">
+                  <h4 class="panel-title">
+                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion4"
+                      href="#collapse8" aria-expanded="false" aria-controls="collapse8">
+                      Lista de definição
+                    </a>
+                  </h4>
+                </div>
+                <div id="collapse8" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading8">
+                  <div class="panel-body">
+                    <i>Tag</i> <strong>&lt;dl></strong> para construir a lista, <i>tag</i> <strong>&lt;dt></strong>
+                    para definir o termo e <i>tag</i> <strong>&lt;dd></strong> para a definição. Veja o exemplo no
+                    trecho a seguir.
+                    <pre>
+                  <code class="language-html">
+&lt;!DOCTYPE html>
+  &lt;html>
+      &lt;head>
+          &lt;title>Lista de definição HTML5&lt;/title>
+      &lt;/head>
+      &lt;body>
+          &lt;dl>
+               &lt;dt>Gerente&lt;/dt>
+              &lt;dd>Funcionário 1&lt;/dd>
+              &lt;dt>Atendente&lt;/dt>
+              &lt;dd>Funcionário 2&lt;/dd>
+              &lt;/dl>                    
+      &lt;/body>
+  &lt;/html>
+                  </code>
+                </pre>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="acessivel print">
+            <p>Lista não ordenada</p>
+            <p><i>Tag</i> <strong>&lt;ul></strong> para construir a lista e <i>tag</i> <strong>&lt;li></strong> para
+              cada linha dentro da lista. Veja o exemplo no trecho a seguir.</p>
+            <pre>
+              <code class="language-html">
+&lt;!DOCTYPE html>
+  &lt;html>
+      &lt;head>
+          &lt;title>Lista não ordenada HTML5&lt;/title>
+      &lt;/head>
+      &lt;body>
+          &lt;ul>
+              &lt;li>Funcionário 1&lt;/li>
+              &lt;li>Funcionário 2&lt;/li>
+          &lt;/ul>        
+      &lt;/body>
+  &lt;/html>
+              </code>
+            </pre>
+            <p>Lista ordenada </p>
+            <p><i>Tag</i> <strong>&lt;ol></strong> para construir a lista e tag <strong>&lt;li></strong> para cada
+              linha dentro da lista. Veja o exemplo no trecho a seguir.</p>
+            <pre>
+                  <code class="language-html">
+&lt;!DOCTYPE html>
+  &lt;html>
+      &lt;head>
+           &lt;title> Lista ordenada HTML5</title>
+      &lt;/head>
+      &lt;body>
+          &lt;ol>
+              &lt;li>Funcionário 1&lt;/li>
+              &lt;li>Funcionário 2&lt;/li>
+          &lt;/ol>              
+      &lt;/body>
+  &lt;/html>
+                  </code>
+                </pre>
+            <p>Lista de definição </p>
+            <p><i>Tag</i> <strong>&lt;dl></strong> para construir a lista, <i>tag</i> <strong>&lt;dt></strong> para
+              definir o termo e <i>tag</i> <strong>&lt;dd></strong> para a definição. Veja o exemplo no trecho a
+              seguir.</p>
+            <pre>
+              <code class="language-html">
+&lt;!DOCTYPE html>
+  &lt;html>
+      &lt;head>
+          &lt;title>Lista de definição HTML5&lt;/title>
+      &lt;/head>
+      &lt;body>
+          &lt;dl>
+               &lt;dt>Gerente&lt;/dt>
+              &lt;dd>Funcionário 1&lt;/dd>
+              &lt;dt>Atendente&lt;/dt>
+              &lt;dd>Funcionário 2&lt;/dd>
+              &lt;/dl>                    
+      &lt;body>
+  &lt;/html>
+              </code>
+              </pre>
+          </div>
+          <p>A próxima figura mostra como as três listas ficam quando interpretadas pelo navegador, na seguinte ordem:
+            não ordenadas, ordenadas e de definição.</p>
+          <img src="imgs/11.png" class="img-responsive center-block mt-40 imprime-menor hidden-xs print">
+          <p class="hidden-lg hidden-md hidden-sm no-print">Toque na imagem para ampliá-la.</p>
+          <a target="_blank" href="imgs/11.png"
+            class="hidden-lg hidden-md hidden-sm no-print">
+            <img src="imgs/11.png"
+              class="img-responsive center-block mt-40 imprime-menor">
+          </a>
+          <figcaption>
+            Figura 11 – Tipos de listas HTML5 <br>
+            Fonte: Senac EAD (2023)
+          </figcaption>
+          <p class="acessivel no-print">A imagem apresenta os três tipos de lista estudados, quando interpretados pelo
+            navegador: não ordenadas, ordenadas e de definição. Usa-se sempre como exemplo funcionário 1 e funcionário
+            2 para cada linha das listas, exceto na última lista (de definição), que tem o gerente como funcionário 1
+            e o atendente como funcionário 2.</p>
+          <p class="only-print">
+            O desafio a seguir está disponível de forma interativa no conteúdo <em>on-line</em>. Acesse o conteúdo
+            <em>on-line</em> e pratique! Nesta versão (impressão), o desafio está proposto de forma estática.
+          </p>
+          <div class="desafio1 justify-content-center">
+            <div class="titulo position-relative">
+              <img class="img-responsive img-titulo position-absolute" src="editor-html-v1/assets/img/tag_desafio1.png"
+                alt="Desafio 1">
+              <p class="text-titulo mt-4 m-3">
+                Utilizando tags <strong>h, p, ul, li </strong> e <strong>a</strong>, monte uma página semelhante à
+                da imagem a seguir. Para o link, a sugestão é usar o endereço < https://www.ead.senac.br> e fazer
+                  com que abra em nova aba ou janela.
+              </p>
+            </div>
+            <div class="text-center m-1">
+              <img class="img-responsive" src="editor-html-v1/assets/img/img_desafio1.png"
+                alt="imagem de exemplo para atividade">
+            </div>
+          </div>
+          <iframe id="iframe" src="editor-html-v1/editor.html" class="m-1" frameborder="0" allowfullscreen width="100%"
+            height="400"></iframe>
+
+          <div class="caixa-destaque-livre iconedesafio borda-primaria-03 my-40">
+            <p>Monte uma página HTML que resulte em algo similar à figura a seguir:</p>
+            <img src="imgs/desafio1.png"
+              class="img-responsive center-block mt-40 imprime-menor hidden-xs print">
+            <p class="hidden-lg hidden-md hidden-sm no-print">Toque na imagem para ampliá-la.</p>
+            <a href="imgs/desafio1.png" target="_blank"
+              class="hidden-lg hidden-md hidden-sm no-print"><img src="imgs/desafio1.png"
+                class="img-responsive center-block mt-40 imprime-menor"></a>
+            <figcaption>
+              Figura 12 – Exemplo de currículo <br>
+              Fonte: Senac EAD (2023)
+            </figcaption>
+            <p class="acessivel no-print">Título “Meu currículo”, abaixo subtítulo “Apresentação” e um parágrafo
+              “lorem ipsum...”. Abaixo, subtítulo “Experiências profissionais” e uma lista de marcadores não ordenados
+              com três itens. Abaixo, subtítulo “contatos” e um parágrafo escrito “E-mail” em negrito e um endereço de
+              e-mail. Abaixo, “Site” em negrito e um link escrito “Meu portfólio”.</p>
+            <p>Use <i>tags</i> de texto e <i>hyperlink </i>de (para o <i>link</i>, use qualquer endereço da <i>web</i>
+              ou de outra página que esteja em sua pasta). No lugar do texto “<i>Lorem ipsum</i>” de teste, redija
+              algo significativo.</p>
+          </div>
+
+          <h3><em>Tags</em> multimídia </h3>
+          <p>Essas <i>tags</i> são funcionalidades implementadas no HTML5 que permitem a inserção direta de conteúdo
+            multimídia dentro do HTML, Veja, a seguir, quais são elas.</p>
+          <h4> &lt;img> </h4>
+          <p>Essa <i>tag</i> é utilizada para inserir uma imagem dentro da estrutura HTML, sempre acompanhada do
+            atributo <strong>src</strong>, o qual permite dizer onde a imagem está localizada. Observe o trecho a
+            seguir.</p>
+          <pre>
+              <code class="language-html">
+&lt;!DOCTYPE html>
+  &lt;html>
+      &lt;head>
+          &lt;title>Imagem HTML5&lt;/title>
+      &lt;/head>
+      &lt;body>
+          &lt;img src="imagem.jpg" width="500" height="600">            
+      &lt;/body>
+  &lt;/html>
+              </code>
+            </pre>
+          <p>Note que alguns atributos compõem a <i>tag</i> <strong>&lt;img></strong> descrita no exemplo acima, e é
+            possível destacar alguns detalhes sobre eles. O <strong>src</strong> é o atributo responsável por informar
+            onde a imagem está localizada. Note que quando se utiliza somente o nome do arquivo
+            (<strong>imagem.jpg</strong>), a estrutura entende que a imagem em questão está na mesma pasta onde o
+            arquivo HTML está sendo armazenado. Caso essa imagem esteja em um diretório diferente ou em um nível antes
+            do arquivo em questão, é possível demonstrar o caminho das seguintes formas, como mostra o trecho a
+            seguir.</p>
+          <pre>
+              <code class="language-html">
+&lt;!DOCTYPE html>
+  &lt;html>
+      &lt;head>
+          &lt;title>Imagem HTML5&lt;/title>
+      &lt;/head>
+      &lt;body>
+          &lt;img src="arquivos/imagens/imagem.jpg" width="500" height="600">            
+      &lt;/body>
+  &lt;/html>
+              </code>
+            </pre>
+          <p>Note que, no trecho citado, o arquivo <strong>imagem.jpg </strong>encontra-se dentro do diretório:
+            <strong>arquivos/imagens/imagem.jpg</strong>. Já no próximo trecho, utiliza-se “..” para dizer que a
+            imagem se encontra no diretório anterior ao do arquivo HTML. Veja:
+          </p>
+          <pre>
+              <code class="language-html">
+&lt;!DOCTYPE html>
+  &lt;html>
+      &lt;head>
+          &lt;title>Imagem HTML5</title>
+      &lt;/head>
+      &lt;body>
+          &lt;img src="../imagem.jpg" width="500" height="600" alt="texto alternativo" >            
+      &lt;/body>
+  &lt;/html>
+              </code>
+            </pre>
+          <p>Ainda é possível observar os atributos <strong>width</strong> e <strong>height</strong>, os quais
+            definem, respectivamente, a largura e a altura da imagem em <i>pixels</i>. E não menos importante, há o
+            atributo <strong>alt</strong>, o qual exibe um texto alternativo caso a imagem não possa ser exibida.</p>
+          <p>No trecho a seguir, pode-se observar um exemplo de uma página acessando uma imagem em um repositório
+            remoto. Note que este exemplo pode ser testado em seu editor de texto, sem a necessidade da presença do
+            arquivo (imagem) de forma local.</p>
+          <pre>
+              <code class="language-html">
+&lt;!DOCTYPE html>
+  &lt;html>
+      &lt;head>
+          &lt;title>Imagem HTML5</title>
+      &lt;/head>
+                
+      &lt;body>
+          &lt;p>
+          &lt;h3>Exemplo de imagem remota &lt;/h3>
+          &lt;img src="https://www.ead.senac.br/public/assets/img/niveis_ensino.jpg" width="700" 
+  height="300"
+              alt="texto alternativo">
+          &lt;/p>
+      &lt;/body>
+  &lt;/html>
+              </code>
+            </pre>
+          <h4> &lt;video> </h4>
+          <p>Essa <i>tag</i>, como propriamente dita, é responsável pela inserção de um vídeo ao conteúdo, porém ela
+            necessita de alguns parâmetros para funcionar corretamente, como uma <i>tag</i> interna denominada
+            <strong>&lt;source></strong>, que é responsável por anexar os conteúdos multimídia. Essa <i>tag</i> tem
+            atributos como o local onde o vídeo está localizado (atributo <strong>src</strong>) e o tipo de vídeo
+            (atributo <strong>type</strong>). Alguns outros atributos da <i>tag</i> &lt;video> são:
+          </p>
+          <div class="caixacinza mt-40">
+            <div class="row">
+              <div class="col-lg-3 col-sm-3 col-xs-4 divisaopag">
+                <p class="text-center bg-black"><strong>controls</strong></p>
+              </div>
+              <div class="col-lg-9 col-sm-9 col-xs-8">
+                <p>Exibição de botões de controle no vídeo, como <strong>Play</strong> e <strong>Pause</strong>.</p>
+              </div>
+              <div class="col-lg-3 col-sm-3 col-xs-4 divisaopag">
+                <p class="text-center bg-black"><strong>autoplay</strong></p>
+              </div>
+              <div class="col-lg-9 col-sm-9 col-xs-8">
+                <p>Vídeo inicia automaticamente com a página.</p>
+              </div>
+              <div class="col-lg-3 col-sm-3 col-xs-4 divisaopag">
+                <p class="text-center bg-black"><strong>loop</strong></p>
+              </div>
+              <div class="col-lg-9 col-sm-9 col-xs-8">
+                <p>Vídeo fica em repetição.</p>
+              </div>
+              <div class="col-lg-3 col-sm-3 col-xs-4 divisaopag">
+                <p class="text-center bg-black"><strong>muted</strong></p>
+              </div>
+              <div class="col-lg-9 col-sm-9 col-xs-8">
+                <p>Vídeo fica sem áudio.</p>
+              </div>
+            </div>
+          </div>
+          <p>Note que o trecho a seguir apresenta o código responsável pela inserção de um vídeo dentro da estrutura
+            do HTML, em que os atributos <strong>width</strong> e <strong>height</strong> são responsáveis por
+            definir as medidas de tamanho do vídeo (largura e altura, respectivamente). Ainda há atributos para
+            exibir os controles do vídeo (<strong>controls</strong>) e para inicialização automática
+            (<strong>autoplay</strong>).</p>
+          <pre>
+              <code class="language-html">
+&lt;!DOCTYPE html>
+  &lt;html>
+      &lt;head>
+          &lt;title>Videos HTML5</title>
+      &lt;/head>
+      &lt;body>
+          &lt;video width="600" height="350" controls autoplay>
+               &lt;source src="video.mp4" type="video/mp4">
+               &lt;source src="video.ogg" type="video/ogg">
+          &lt;/video>                
+      &lt;/body>
+  &lt;/html>
+              </code>
+            </pre>
+          <h4>&lt;audio> </h4>
+          <p>Com funcionamento semelhante à <i>tag</i> de vídeo, essa <i>tag</i> é responsável por adicionar
+            arquivos de áudio à estrutura HTML. Ela também conta com o auxílio da <i>tag</i>
+            <strong>&lt;source></strong>. Veja:
+          </p>
+          <pre>
+              <code class="language-html">
+&lt;!DOCTYPE html>
+  &lt;html>
+      &lt;head>
+          &lt;title>Áudio HTML5&lt;/title>
+      &lt;/head>
+      &lt;body>
+          &lt;audio>
+              &lt;source src="audio.mp3" type="audio/mpeg">
+          &lt;/audio>                      
+      &lt;/body>
+  &lt;/html>
+              </code>
+            </pre>
+          <div class="caixa-destaque iconedesafio borda-primaria-03 mt-40">
+            <p>Crie uma página com uma galeria de quatro figuras. Baixe imagens da Internet na pasta onde foi salvar
+              a página HTML. Separe as imagens usando <strong>&lt;br/></strong> ou <strong>&lt;hr/></strong>. Use o
+              atributo <strong>width</strong> para que todas fiquem com a mesma largura.</p>
+          </div>
+          <h3><i>Tags</i> de formulário</h3>
+          <p>Formulários são estruturas formadas por campos de texto, botões, <i>selects</i>, <i>checkboxes</i>,
+            entre outros. Um formulário tem como objetivos a obtenção e a transferência de informações dentro de uma
+            estrutura HTML, podendo interagir com outras linguagens.</p>
+          <p>Um formulário dentro do HTML é representado pela <i>tag</i> <strong>&lt;form></strong>, a qual indica a
+            abertura de um novo formulário. Essa <i>tag</i> ainda recebe alguns atributos, os quais você verá a
+            seguir.</p>
+
+          <p class="no-print">Clique ou toque para visualizar o conteúdo.</p>
+
+          <div class="panel-group gaitinha" id="accordion2" role="tablist" aria-multiselectable="true">
+            <div class="panel panel-default">
+              <div class="panel-heading" role="tab" id="headingOne2">
+                <h3 class="panel-title">
+                  <a role="button" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne2"
+                    aria-expanded="false" aria-controls="collapseOne2">
+                    Method
+                  </a>
+                </h3>
+              </div>
+              <div id="collapseOne2" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne2">
+                <div class="panel-body">
+                  <p>Esse atributo recebe o método HTTP (<i>hyper text transfer protocol</i>), que será usado pelo
+                    formulário, sendo ele GET ou POST.</p>
+                  <p><strong>GET</strong> – Quando usado, realiza a passagem dos valores do formulário diretamente
+                    pela URL (<i>uniform resource locator</i>). Esses valores ficam facilmente visíveis no navegador.
+                    Veja o exemplo em que os campos <strong>nome</strong> e <strong>idade</strong> são passados por
+                    meio da URL (para a página <strong>recebedados</strong>) utilizando o método GET:</p>
+                  <p>&lt;https://www.meusite.com/recebedados?nome=Luis&idade=25></p>
+                  <p><strong>POST</strong> – Diferentemente do método GET, o método POST não utiliza a URL, pois envia
+                    os dados de forma interna, ou seja, não são visíveis primariamente para o usuário.</p>
+                </div>
+              </div>
+            </div>
+            <div class="panel panel-default">
+              <div class="panel-heading" role="tab" id="headingTwo2">
+                <h3 class="panel-title">
+                  <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion2"
+                    href="#collapseTwo2" aria-expanded="false" aria-controls="collapseTwo2">
+                    Action
+                  </a>
+                </h3>
+              </div>
+              <div id="collapseTwo2" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo2">
+                <div class="panel-body">
+                  <p>Esse atributo indica para qual página os dados do formulário serão enviados. Note que essa página
+                    geralmente representa um serviço de <i>back-end</i> que receberá os valores e os utilizará para
+                    operações.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="acessivel print">
+            <p>Method</p>
+            <p>Esse atributo recebe o método HTTP (<i>hyper text transfer protocol</i>), que será usado pelo
+              formulário, sendo ele GET ou POST.</p>
+            <p><strong>GET</strong> – Quando usado, realiza a passagem dos valores do formulário diretamente pela
+              URL (<i>uniform resource locator</i>). Esses valores ficam facilmente visíveis no navegador. Veja o
+              exemplo em que os campos <strong>nome</strong> e <strong>idade</strong> são passados por meio da URL
+              (para a página <strong>recebedados</strong>) utilizando o método GET:</p>
+            <p>&lt;https://www.meusite.com/recebedados?nome=Luis&idade=25></p>
+            <p><strong>POST</strong> – Diferentemente do método GET, o método POST não utiliza a URL, pois envia os
+              dados de forma interna, ou seja, não são visíveis primariamente para o usuário.</p>
+            <p>Action</p>
+            <p>Esse atributo indica para qual página os dados do formulário serão enviados. Note que essa página
+              geralmente representa um serviço de <i>back-end</i> que receberá os valores e os utilizará para
+              operações.</p>
+          </div>
+
+          <p>Dentro de uma <i>tag</i> de formulário é possível receber outras <i>tags</i>, que são responsáveis por
+            estruturar e receber os dados digitados pelo usuário. Veja, a seguir, as principais.</p>
+          <div class="no-print" aria-hidden="true">
+            <p>Clique ou toque para visualizar o conteúdo.</p>
+            <div class="panel-group gaitinha" id="accordion3" role="tablist" aria-multiselectable="true">
+              <div class="panel panel-default">
+                <div class="panel-heading" role="tab" id="heading9">
+                  <h4 class="panel-title">
+                    <a role="button" data-toggle="collapse" data-parent="#accordion3" href="#collapse9"
+                      aria-expanded="true" aria-controls="collapse9">
+                      &lt;input>
+                    </a>
+                  </h4>
+                </div>
+                <div id="collapse9" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="heading9">
+                  <div class="panel-body">
+                    <p>Essa é a principal tag dentro de um formulário. Ela recebe os dados digitados pelo usuário e
+                      conta com alguns atributos:</p>
+                    <ul>
+                      <li><strong>type</strong> – Demonstra o tipo de campo e os mais comuns são:
+                        <strong>text</strong>, <strong>date</strong>, <strong>file</strong>,
+                        <strong>button</strong>, <strong>hidden</strong>, <strong>password</strong> e
+                        <strong>submit</strong>.
+                      </li>
+                      <li><strong>value</strong> – Define o valor do campo, ou seja, o dado que o campo recebe.</li>
+                      <li><strong>name</strong> – É uma identificação do campo, muitas vezes utilizada para o
+                        reconhecimento dos campos na página que recebe o formulário.</li>
+                      <li><strong>id</strong> – É a identificação padrão para uso e interação de um campo com outras
+                        linguagens, por exemplo: JavaScript.</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="panel panel-default">
+                <div class="panel-heading" role="tab" id="heading10">
+                  <h4 class="panel-title">
+                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion3"
+                      href="#collapse10" aria-expanded="false" aria-controls="collapse10">
+                      &lt;select>
+                    </a>
+                  </h4>
+                </div>
+                <div id="collapse10" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading10">
+                  <div class="panel-body">
+                    <p>É uma estrutura que abriga diversos outros campos, a fim de gerar uma seleção. As opções
+                      presentes dentro de <strong>&lt;select></strong> são disponibilizadas pela <i>tag</i>
+                      <strong>&lt;option></strong>.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="panel panel-default">
+                <div class="panel-heading" role="tab" id="heading11">
+                  <h4 class="panel-title">
+                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion3"
+                      href="#collapse11" aria-expanded="false" aria-controls="collapse11">
+                      &lt;textarea>
+                    </a>
+                  </h4>
+                </div>
+                <div id="collapse11" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading11">
+                  <div class="panel-body">
+                    <p>Campo semelhante ao <strong>&lt;input></strong>, porém tem uma entrada de texto e o tamanho
+                      visual é variável.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="panel panel-default">
+                <div class="panel-heading" role="tab" id="heading12">
+                  <h4 class="panel-title">
+                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion3"
+                      href="#collapse12" aria-expanded="false" aria-controls="collapse12">
+                      &lt;label>
+                    </a>
+                  </h4>
+                </div>
+                <div id="collapse12" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading12">
+                  <div class="panel-body">
+                    <p>Define um rótulo ou uma descrição para um campo de formulário.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="acessivel print">
+            <p>&lt;input></p>
+            <p>Essa é a principal tag dentro de um formulário. Ela recebe os dados digitados pelo usuário e conta
+              com alguns atributos:</p>
+            <ul>
+              <li><strong>type</strong> – Demonstra o tipo de campo e os mais comuns são: <strong>text</strong>,
+                <strong>date</strong>, <strong>file</strong>, <strong>button</strong>, <strong>hidden</strong>,
+                <strong>password</strong> e <strong>submit</strong>.
+              </li>
+              <li><strong>value</strong> – Define o valor do campo, ou seja, o dado que o campo recebe.</li>
+              <li><strong>name</strong> – É uma identificação do campo, muitas vezes utilizada para o reconhecimento
+                dos campos na página que recebe o formulário.</li>
+              <li><strong>id</strong> – É a identificação padrão para uso e interação de um campo com outras
+                linguagens, por exemplo: JavaScript.</li>
+            </ul>
+            <p>&lt;select> </p>
+            <p>É uma estrutura que abriga diversos outros campos, a fim de gerar uma seleção. As opções presentes
+              dentro de <strong>&lt;select></strong> são disponibilizadas pela <i>tag</i>
+              <strong>&lt;option></strong>.
+            </p>
+            <p>&lt;textarea> </p>
+            <p>Campo semelhante ao <strong>&lt;input></strong>, porém tem uma entrada de texto e o tamanho visual é
+              variável.</p>
+            <p>&lt;label> </p>
+            <p>Define um rótulo ou uma descrição para um campo de formulário.</p>
+          </div>
+
+          <p>No trecho a seguir, é possível ver a estrutura de um formulário básico para cadastro de funcionários.
+            Note que, aqui, implementou-se, inicialmente, o atributo <strong>action</strong>, dentro da <i>tag</i>
+            <strong>&lt;form></strong>, sendo esse atributo responsável por informar para qual página os dados que
+            estão sendo submetidos no formulário serão enviados.
+          </p>
+          <p>Em seguida, é possível ver o método de envio (<strong>method</strong>). Nesse caso, está sendo
+            utilizado o método POST, o qual já foi descrito anteriormente. Veja que o <strong>input</strong> é do
+            tipo <strong>text</strong>, ou seja, você receberá dados em texto por meio dele. Este ainda tem o
+            atributo <strong>name</strong>, o qual é responsável por identificar o campo. Há ainda o
+            <strong>required</strong>, que informa que o campo (<strong>input</strong>) é de preenchimento
+            obrigatório, ou seja, não é possível submeter o formulário caso esse campo não esteja preenchido.
+            Sugere-se o teste do trecho a seguir em seu editor de texto, para que você observe melhor o
+            funcionamento do formulário.
+          </p>
+          <pre>
+              <code class="language-html">
+&lt;!DOCTYPE html>
+  &lt;html>
+      &lt;head>
+          &lt;title>Meu Site&lt;/title>
+      &lt;/head>
+      &lt;body>
+          &lt;h3>Primeiro exemplo de form&lt;/h3>
+          &lt;form action="paginaderecebimento" method="POST">
+              &lt;label>Nome:&lt;/label>
+              &lt;input type="text" name="nome_funcionario" required />
+              &lt;br />
+              &lt;input type="submit" value="Cadastro" />
+          &lt;/form>
+      &lt;/body>
+  &lt;/html>
+              </code>
+            </pre>
+          <p>Note que, no próximo trecho, há um formulário mais completo e desenvolvido, abordando grande parte dos
+            atributos e das <i>tags</i> vistas anteriormente. Veja que agora há <strong>input</strong> do tipo
+            <strong>email</strong>, o qual aceita apenas padrões reconhecidos (email@provedor.com). Há ainda um
+            <strong>input</strong> do tipo <strong>password</strong>, que deixa oculta a senha digitada pelo usuário
+            (não é criptografia). Por fim, há um <strong>select</strong>, com duas opções para o usuário selecionar
+            (escolher apenas uma), seguido de uma área de texto livre (<strong>textarea</strong>). O
+            <strong>input</strong> do tipo <strong>submit</strong> remete a um botão que tem como funcionalidade
+            submeter os dados preenchidos no formulário, para a página definida no <strong>action</strong>
+            (<strong>paginaderecebimento</strong>).
+          </p>
+          <pre>
+              <code class="language-html">
+&lt;!DOCTYPE html>
+  &lt;html>
+    &lt;head>
+        &lt;title>Meu Site &lt;/title>
+     &lt;/head>
+     &lt;body>
+        &lt;form action="paginaderecebimento" method="POST">
+             &lt;label>Nome: &lt;/label>
+             &lt;input type="text" name="nome_funcionario" />
+             &lt;br/>
+             &lt;label>Email: &lt;/label>
+             &lt;input type="email" name="email_funcionario" />
+             &lt;br/>
+             &lt;label>Senha: &lt;/label>
+             &lt;input type="password" name="senha_funcionario" />
+             &lt;br/>
+             &lt;label>Atuação: &lt;/label>
+             &lt;select name="atuacao">
+                 &lt;option value="Atendente">Atendente &lt;/option>
+                 &lt;option value="Gerente">Gerente &lt;/option>
+              &lt;/select>
+               &lt;br/>
+               &lt;label>Comentário &lt;label>
+               &lt;textarea name="comentario"> &lt;/textarea>
+               &lt;br/>
+               &lt;input type="submit" value="Cadastro" />
+        &lt;/form>
+    &lt;/body>
+  &lt;/html>
+              </code>
+            </pre>
+          <p>Na imagem a seguir, é possível visualizar o formulário programado anteriormente. Note que ele está em
+            HTML5 puro; em outras palavras, não tem nenhum tipo de estilização.</p>
+          <img src="imgs/12.png" class="img-responsive center-block mt-40 imprime-menor hidden-xs print">
+          <p class="hidden-lg hidden-md hidden-sm no-print">Toque na imagem para ampliá-la.</p>
+          <a target="_blank" href="imgs/12.png"
+            class="hidden-lg hidden-md hidden-sm no-print">
+            <img src="imgs/12.png"
+              class="img-responsive center-block mt-40 imprime-menor">
+          </a>
+          <figcaption>
+            Figura 13 – <i>Tags</i> de formulário HTML5 <br>
+            Fonte: Senac EAD (2023)
+          </figcaption>
+          <p class="acessivel no-print">A imagem apresenta os mesmos campos do formulário programado anteriormente,
+            porém agora com uma exibição realizada pelo navegador.</p>
+          <p class="only-print">
+            O desafio a seguir está disponível de forma interativa no conteúdo <em>on-line</em>. Acesse o conteúdo
+            <em>on-line</em> e pratique! Nesta versão (impressão), o desafio está proposto de forma estática.
+          </p>
+          <div class="desafio1 justify-content-center">
+            <div class="titulo position-relative">
+              <img class="img-responsive img-titulo position-absolute" src="editor-html-v1/assets/img/tag_desafio2.png"
+                alt="Desafio 1">
+              <p class="text-titulo p-3 mt-4 m-3">
+                Utilizando tags <strong>h, form, input, select</strong> e <strong>label</strong>, construa uma
+                página próxima da imagem a seguir. Tag <strong>br</strong> pode ser usada para a separação de
+                linhas.
+              </p>
+            </div>
+            <div class="text-center m-2">
+              <img class="img-responsive" src="editor-html-v1/assets/img/img_desafio2.png"
+                alt="imagem de exemplo para atividade">
+            </div>
+            <iframe id="iframe" src="editor-html-v1/editor.html" class="m-1" frameborder="0" allowfullscreen
+              width="100%" height="800"></iframe>
+          </div>
+
+          <p><strong>Radio buttons</strong>, ou botões de seleção única, têm a peculiaridade de serem apresentados
+            em grupo, e apenas uma das opções pode ser selecionada por vez.</p>
+          <pre>
+              <code class="language-html">
+&lt;p>Qual o seu curso?&lt;/p>
+
+&lt;input type="radio" id="tds" name="opcoes-curso" value="TDS">
+&lt;label for="tds">Téc. Desenvolv. Sistemas&lt;/label>
+
+&lt;input type="radio" id="ipi" name="opcoes-curso" value="TII">
+&lt;label for="ipi">Téc. Informática para a Internet&lt;/label>
+              </code>
+            </pre>
+          <p>É importante que na <i>tag</i> <strong>&lt;input></strong> do tipo <strong>radio</strong> sejam
+            informados nome e valor, pois eles serão usados no servidor para processar a informação.</p>
+          <p><strong>Checkbox</strong> comporta-se de maneira semelhante, mas não precisa estar em grupo.</p>
+          <pre>
+              <code class="language-html">
+&lt;input type="checkbox" id="news" name="news" value="Sim">
+&lt;label for="news">Deseja receber nossa newsletter mensal?&lt;/label>        
+              </code>
+            </pre>
+          <p>É importante notar a relação de <strong>radio buttons</strong> e <strong>checkboxes</strong> com o
+            elemento &lt;label>: deve-se usar essa <i>tag</i> e seu atributo <strong>for</strong> com o valor do
+            atributo <strong>id</strong> do elemento de <strong>input</strong>. Isso permite que o usuário não
+            precise clicar exatamente na caixinha de <strong>checkbox</strong> ou no botão de rádio para selecionar
+            a opção desejada, basta clicar no texto associado.</p>
+          <p>A seguir, veja um exemplo expandido para os trechos anteriores.</p>
+          <pre>
+              <code class="language-html">
+&lt;!DOCTYPE html>
+  &lt;html>
+    &lt;body>
+        &lt;form>
+            &lt;div>
+                &lt;label for="mail">Digite seu email:&lt;/label>
+                &lt;input type="email" id="mail" />
+            &lt;/div>
+            &lt;div>
+                &lt;p>Qual o seu curso?&lt;/p>
+                &lt;input type="radio" id="tds" name="opcoes-curso" value="TDS">
+                &lt;label for="tds">Téc. Desenvolv. Sistemas&lt;/label>
+
+                &lt;input type="radio" id="ipi" name="opcoes-curso" value="TII">
+                &lt;label for="ipi">Téc. Informática para a Internet</label>
+            &lt;/div>
+            &lt;div>
+                &lt;input type="checkbox" id="news" name="news" value="Sim">
+                &lt;label for="news">Deseja receber nossa newsletter mensal?</label>
+            &lt;/div>
+        &lt;/form>
+    &lt;/body>
+  &lt;/html>
+              </code>
+            </pre>
+          <img src="imgs/13.png" class="img-responsive center-block mt-40 imprime-menor hidden-xs print">
+          <p class="hidden-lg hidden-md hidden-sm no-print">Toque na imagem para ampliá-la.</p>
+          <a target="_blank" href="imgs/13.png"
+            class="hidden-lg hidden-md hidden-sm no-print">
+            <img src="imgs/13.png"
+              class="img-responsive center-block mt-40 imprime-menor">
+          </a>
+          <figcaption>
+            Figura 14 – Página resultante do código anterior <br>
+            Fonte: Senac EAD (2023)
+          </figcaption>
+          <p class="acessivel no-print">Página simples com campo de e-mail, radio buttons e checkbox de acordo com o
+            código HTML do exemplo anterior.</p>
+          <div class="caixa-destaque iconedesafio borda-primaria-03 mt-40">
+            <p>Crie uma página com um formulário de candidatura a uma vaga de emprego com os seguintes campos:</p>
+            <ul>
+              <li class="glyphicon glyphicon-ok"> Nome completo (caixa de texto)</li>
+              <li class="glyphicon glyphicon-ok"> Telefone (caixa de texto)</li>
+              <li class="glyphicon glyphicon-ok"> Vaga desejada (seleção com opções “Atendente”, “Pedreiro”,
+                “Programador” e “Professor”)</li>
+              <li class="glyphicon glyphicon-ok"> Necessidade especial ou não (<strong>checkbox</strong>)</li>
+            </ul>
+            <p>Não se esqueça do botão para submeter os dados.</p>
+          </div>
+          <h3><i>Tags</i> de tabelas</h3>
+          <p>Essa <i>tag</i> denominada &lt;table> tem como objetivo criar uma tabela dentro do HTML, sendo formada
+            por outras <i>tags</i> que definem a estrutura dessa tabela, sendo elas:</p>
+          <div class="caixacinza mt-40">
+            <div class="row">
+              <div class="col-lg-3 col-sm-3 col-xs-4 divisaopag">
+                <p class="text-center bg-black"> <strong>&lt;tr></strong></p>
+              </div>
+              <div class="col-lg-9 col-sm-9 col-xs-8">
+                <p>Representa uma linha da tabela.</p>
+              </div>
+              <div class="col-lg-3 col-sm-3 col-xs-4 divisaopag">
+                <p class="text-center bg-black"> <strong>&lt;td></strong></p>
+              </div>
+              <div class="col-lg-9 col-sm-9 col-xs-8">
+                <p>Representa uma coluna da tabela.</p>
+              </div>
+              <div class="col-lg-3 col-sm-3 col-xs-4 divisaopag">
+                <p class="text-center bg-black"> <strong>&lt;th></strong></p>
+              </div>
+              <div class="col-lg-9 col-sm-9 col-xs-8">
+                <p>Representa um título destacado dentro da tabela.</p>
+              </div>
+              <div class="col-lg-3 col-sm-3 col-xs-4 divisaopag">
+                <p class="text-center bg-black"> <strong>&lt;thead></strong></p>
+              </div>
+              <div class="col-lg-9 col-sm-9 col-xs-8">
+                <p>É uma tag estrutural, que representa o cabeçalho de uma tabela.</p>
+              </div>
+              <div class="col-lg-3 col-sm-3 col-xs-4 divisaopag">
+                <p class="text-center bg-black"> <strong>&lt;tbody></strong></p>
+              </div>
+              <div class="col-lg-9 col-sm-9 col-xs-8">
+                <p>É uma tag estrutural que representa o corpo da tabela.</p>
+              </div>
+              <div class="col-lg-3 col-sm-3 col-xs-4 divisaopag">
+                <p class="text-center bg-black"> <strong>&lt;tfoot></strong></p>
+              </div>
+              <div class="col-lg-9 col-sm-9 col-xs-8">
+                <p>É a tag estrutural que representa o rodapé de uma tabela.</p>
+              </div>
+            </div>
+
+          </div>
+          <p>No trecho a seguir, há um exemplo mais simples de uma tabela, contendo apenas elementos de linhas
+            (<strong>tr</strong>) e colunas (<strong>td</strong>). Essa tabela tem o objetivo de exibir os salários
+            dos funcionários de acordo com o cargo deles. Note que, em cada coluna (<strong>td</strong>) da primeira
+            linha (<strong>tr</strong>), há a descrição do cargo. Já nas colunas da segunda linha, é possível ver os
+            respectivos salários. </p>
+          <p>Para visualizar melhor, aconselha-se o teste do código a seguir em seu editor de texto.</p>
+          <pre>
+              <code class="language-html">
+&lt;!DOCTYPE html>
+  &lt;html>
+      &lt;head>
+          &lt;title>Tabela HTML5&lt;/title>
+      &lt;/head>
+      &lt;body>
+          &lt;h3>Tabela salarial 2023&lt;/h3>
+          &lt;table border='1'>
+              &lt;tr>
+                  &lt;td>Gerente&lt;/td>
+                  &lt;td>Atendente&lt;/td>
+                  &lt;td>Auxiliar&lt;/td>
+              &lt;/tr>
+              &lt;tr>
+                  &lt;td>R$5040,00&lt;/td>
+                  &lt;td>R$2450,00&lt;/td>
+                  &lt;td>R$1640,00&lt;/td>
+              &lt;/tr>
+          &lt;/table>
+      &lt;/body>
+  &lt;/html>
+              </code>
+            </pre>
+          <p>O trecho a seguir demonstra a criação de uma tabela mais complexa, com todos os elementos citados
+            anteriormente. Essa tabela tem o objetivo de exibir os salários dos cargos de uma empresa. É possível
+            notar que a tabela tem alguns atributos aplicados, como: <strong>border</strong>, o qual define a
+            espessura da borda da tabela; <strong>colspan</strong>, que define quantas colunas o campo ocupará; e
+            <strong>rowspan</strong>, que define quantas linhas o campo ocupará.
+          </p>
+          <pre>
+              <code class="language-html">
+&lt;!DOCTYPE html>
+  &lt;html>
+    &lt;head>
+        &lt;title>Tabela HTML5&lt;/title>
+     &lt;/head>
+     &lt;body>
+        &lt;table border='1'>
+            &lt;thead>
+                &lt;tr>
+                    &lt;th colspan="4">Tabela Salarial&lt;/th>
+                &lt;/tr>
+             &lt;/thead>
+             &lt;tfoot>
+                &lt;tr>
+                    &lt;td colspan="4">Atualizada em: 2023</td>
+                &lt;/tr>
+             &lt;/tfoot>
+             &lt;tbody>
+                &lt;tr>
+                    &lt;td rowspan="2">Cargos &lt;/td>
+                    &lt;td>Gerente &lt;/td>
+                    &lt;td>Atendente &lt;/td>
+                    &lt;td>Auxiliar &lt;/td>
+                 &lt;/tr>
+                 &lt;tr>
+                    &lt;td>R$5000,00 &lt;/td>
+                    &lt;td>R$1640,00 &lt;/td>
+                    &lt;td>R$1450,00 &lt;/td>
+                &lt;/tr>
+            &lt;/tbody>
+        &lt;/table>
+    &lt;/body>
+  &lt;/html>
+              </code>
+            </pre>
+          <p>Na próxima figura, veja o resultado da criação da tabela, quando exibida pelo navegador.</p>
+          <img src="imgs/14.png" class="img-responsive center-block mt-40 imprime-menor hidden-xs print">
+          <p class="hidden-lg hidden-md hidden-sm no-print">Toque na imagem para ampliá-la.</p>
+          <a target="_blank" href="imgs/14.png"
+            class="hidden-lg hidden-md hidden-sm no-print">
+            <img src="imgs/14.png"
+              class="img-responsive center-block mt-40 imprime-menor">
+          </a>
+          <figcaption>
+            Figura 15 – <i>Tag</i> de tabelas HTML5 <br>
+            Fonte: Senac EAD (2023)
+          </figcaption>
+          <p class="acessivel no-print">A imagem apresenta o resultado da tabela programada, quando exibida pelo
+            navegador, começando pelo título, tabela salarial, e exibindo posteriormente os salários dos cargos de
+            gerente, atendente e auxiliar. Por fim, é informado que a tabela foi atualizada no ano de 2023.</p>
+          <div class="caixa-destaque icone-atencao borda-primaria-03 mt-40">
+            <p> <strong>&lt;table></strong> já foi usado há muito tempo para organizar elementos na tela. Essa
+              prática, no entanto, é obsoleta e problemática, pois não permite fluidez na página e adaptação dela a
+              diferentes resoluções. Assim, <strong>&lt;table></strong> deve ser usado apenas para tabular dados. A
+              formatação de <i>layout</i> deve ser aplicada com <i>tags</i> estruturais ou <i>containers</i>, como
+              <strong>&lt;div></strong>, aplicando estilização com CSS.
+            </p>
+          </div>
+          <p class="only-print">
+            O desafio a seguir está disponível de forma interativa no conteúdo <em>on-line</em>. Acesse o conteúdo <em>on-line</em> e pratique! Nesta versão (impressão), o desafio está proposto de forma estática. 
+          </p>
+          <div class="desafio1 justify-content-center">
+            <div class="titulo position-relative">
+              <img class="img-responsive img-titulo position-absolute" src="editor-html-v1/assets/img/tag_desafio3.png"
+                alt="Desafio 1">
+              <p class="text-titulo p-3 mt-4 m-3">
+                Usando a <strong>table</strong> e suas tags, bem como seus atributos relacionados, monte uma página
+                com uma tabela semelhante à da imagem a seguir.
+              </p>
+            </div>
+            <div class="text-center m-2">
+              <img class="img-responsive" src="editor-html-v1/assets/img/img_desafio3.png"
+                alt="imagem de exemplo para atividade">
+            </div>
+            <iframe id="iframe" src="editor-html-v1/editor.html" class="m-1" frameborder="0" allowfullscreen
+              width="100%" height="800"></iframe>
+          </div>
+
+          <h3><i>Tags</i> estruturais HTML5</h3>
+          <p>Como propriamente dito, as <i>tags</i> estruturais servem para estruturar a organização de uma página
+            <i>web</i>. São <i>tags</i> responsáveis por proporcionar uma melhor visualização do conteúdo de um
+            sistema <i>web</i> para o usuário por meio do navegador. As <i>tags</i> estruturais do HTML5 são as
+            listadas a seguir.
+          </p>
+          <div class="no-print" aria-hidden="true">
+            <p>Clique ou toque para visualizar o conteúdo.</p>
+            <div class="panel-group gaitinha" id="accordion9" role="tablist" aria-multiselectable="true">
+              <div class="panel panel-default">
+                <div class="panel-heading" role="tab" id="heading13">
+                  <h4 class="panel-title">
+                    <a role="button" data-toggle="collapse" data-parent="#accordion9" href="#collapse13"
+                      aria-expanded="true" aria-controls="collapse13">
+                      &lt;header>
+                    </a>
+                  </h4>
+                </div>
+                <div id="collapse13" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="heading13">
+                  <div class="panel-body">
+                    <p>Essa <i>tag</i> é utilizada para definir o cabeçalho de uma página. Normalmente é bastante
+                      reutilizada na maior parte das páginas do sistema.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="panel panel-default">
+                <div class="panel-heading" role="tab" id="heading14">
+                  <h4 class="panel-title">
+                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion9"
+                      href="#collapse14" aria-expanded="false" aria-controls="collapse14">
+                      &lt;nav>
+                    </a>
+                  </h4>
+                </div>
+                <div id="collapse14" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading14">
+                  <div class="panel-body">
+                    <p>É a <i>tag</i> amplamente utilizada para definir a navegação e abrigar a criação de menus e
+                      listas.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="panel panel-default">
+                <div class="panel-heading" role="tab" id="heading15">
+                  <h4 class="panel-title">
+                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion9"
+                      href="#collapse15" aria-expanded="false" aria-controls="collapse15">
+                      &lt;main>
+                    </a>
+                  </h4>
+                </div>
+                <div id="collapse15" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading15">
+                  <div class="panel-body">
+                    <p>Essa <i>tag</i> é responsável por apresentar o conteúdo de determinado tópico.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="panel panel-default">
+                <div class="panel-heading" role="tab" id="heading16">
+                  <h4 class="panel-title">
+                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion9"
+                      href="#collapse16" aria-expanded="false" aria-controls="collapse16">
+                      &lt;article>
+                    </a>
+                  </h4>
+                </div>
+                <div id="collapse16" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading16">
+                  <div class="panel-body">
+                    <p>Essa <i>tag</i> é uma estrutura independente dentro da página. Ela tem conteúdo e pode, ou
+                      não, estar dentro de uma seção (<strong>&lt;section></strong>). Geralmente se refere a um
+                      texto independente na página, por exemplo, um <i>post</i> de <i>blog</i> ou uma notícia.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="panel panel-default">
+                <div class="panel-heading" role="tab" id="heading17">
+                  <h4 class="panel-title">
+                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion9"
+                      href="#collapse17" aria-expanded="false" aria-controls="collapse17">
+                      &lt;section>
+                    </a>
+                  </h4>
+                </div>
+                <div id="collapse17" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading17">
+                  <div class="panel-body">
+                    <p>Separa a página em seções. Um <strong>&lt;section></strong> pode representar um conjunto de
+                      elementos, como <strong>&lt;article></strong> (por exemplo, uma seção com vários <i>posts</i>
+                      de <i>blog</i> sobre um determinado assunto) ou trechos específicos e significativos de um
+                      conteúdo (por exemplo, uma divisão do <strong>&lt;article></strong> em introdução e
+                      conclusão). </p>
+                  </div>
+                </div>
+              </div>
+              <div class="panel panel-default">
+                <div class="panel-heading" role="tab" id="heading18">
+                  <h4 class="panel-title">
+                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion9"
+                      href="#collapse18" aria-expanded="false" aria-controls="collapse18">
+                      &lt;aside>
+                    </a>
+                  </h4>
+                </div>
+                <div id="collapse18" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading18">
+                  <div class="panel-body">
+                    <p>É uma <i>tag</i> de conteúdo relacionada ao conteúdo ao seu redor.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="panel panel-default">
+                <div class="panel-heading" role="tab" id="heading19">
+                  <h4 class="panel-title">
+                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion9"
+                      href="#collapse19" aria-expanded="false" aria-controls="collapse19">
+                      &lt;div>
+                    </a>
+                  </h4>
+                </div>
+                <div id="collapse19" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading19">
+                  <div class="panel-body">
+                    <p>É uma das <i>tags</i> estruturais mais utilizadas. Ela define uma divisão dentro de uma
+                      página. É muito utilizada na organização do conteúdo dentro do HTML5.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="panel panel-default">
+                <div class="panel-heading" role="tab" id="heading20">
+                  <h4 class="panel-title">
+                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion9"
+                      href="#collapse20" aria-expanded="false" aria-controls="collapse20">
+                      &lt;footer>
+                    </a>
+                  </h4>
+                </div>
+                <div id="collapse20" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading20">
+                  <div class="panel-body">
+                    <p>Define o rodapé da página.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="acessivel print">
+            <p> &lt;header> </p>
+            <p>Essa <i>tag</i> é utilizada para definir o cabeçalho de uma página. Normalmente é bastante
+              reutilizada na maior parte das páginas do sistema.</p>
+            <p>&lt;nav> </p>
+            <p>É a <i>tag</i> amplamente utilizada para definir a navegação e abrigar a criação de menus e listas.
+            </p>
+            <p> &lt;main> </p>
+            <p>Essa <i>tag</i> é responsável por apresentar o conteúdo de determinado tópico.</p>
+            <p> &lt;article> </p>
+            <p>Essa <i>tag</i> é uma estrutura independente dentro da página. Ela tem conteúdo e pode, ou não, estar
+              dentro de uma seção (<strong>&lt;section></strong>). Geralmente se refere a um texto independente na
+              página, por exemplo, um <i>post</i> de <i>blog</i> ou uma notícia.</p>
+            <p>&lt;section> </p>
+            <p>Separa a página em seções. Um <strong>&lt;section></strong> pode representar um conjunto de
+              elementos, como <strong>&lt;article></strong> (por exemplo, uma seção com vários <i>posts</i> de
+              <i>blog</i> sobre um determinado assunto) ou trechos específicos e significativos de um conteúdo (por
+              exemplo, uma divisão do <strong>&lt;article></strong> em introdução e conclusão).
+            </p>
+            <p> &lt;aside> </p>
+            <p> É uma <i>tag</i> de conteúdo relacionada ao conteúdo ao seu redor.</p>
+            <p>&lt;div> </p>
+            <p>É uma das <i>tags</i> estruturais mais utilizadas. Ela define uma divisão dentro de uma página. É
+              muito utilizada na organização do conteúdo dentro do HTML5.</p>
+            <p> &lt;footer> </p>
+            <p> Define o rodapé da página.</p>
+          </div>
+          <p>Observação: nenhuma das tags estruturais tem autofechamento. </p>
+          <img src="imgs/15.png"
+            class="img-responsive center-block mt-40 imprime-menor hidden-xs print">
+          <p class="hidden-lg hidden-md hidden-sm no-print">Toque na imagem para ampliá-la.</p>
+          <a href="imgs/15.png" target="_blank"
+            class="hidden-lg hidden-md hidden-sm no-print"><img src="imgs/15.png"
+              class="img-responsive center-block mt-40 imprime-menor"></a>
+          <figcaption>
+            Figura 16 – Tags estruturais HTML5 <br>
+            Fonte: Melo (c2023)
+          </figcaption>
+          <p class="acessivel no-print">A imagem apresenta o desenho de uma página utilizando as tags estruturais.
+            Na parte de cima da imagem, está escrita a tag header e cabeçalho da página. No centro da imagem, há a
+            tag section e conteúdo. Abaixo da tag section, há a tag header e cabeçalho do article. Abaixo e ainda no
+            centro, há a tag article seguida da tag footer e rodapé da tag article. Na esquerda da imagem, há a tag
+            nav e navegação. Na direita, há a tag aside e conteúdo relacionado. Na parte totalmente inferior da
+            imagem, há a tag footer e rodapé da página. </p>
+          <p>Na figura anterior, é possível ver uma estrutura em HTML5 de uma página <i>web</i>. Note que,
+            inicialmente, há a tag <strong>&lt;header></strong> contendo o cabeçalho da página. Na lateral esquerda,
+            é possível verificar uma estrutura de navegação (<i>tag</i> <strong>&lt;nav></strong>) que poderia
+            abrigar um <i>menu</i> lateral. Na parte central da imagem, há a seção de conteúdo
+            (<strong>&lt;section></strong>), seguida de um novo cabeçalho que precede a <i>tag</i>
+            <strong>&lt;article></strong>. Note que, na lateral direita, há a presença da <i>tag</i>
+            <strong>&lt;aside></strong>, apresentando o conteúdo relacionado. Por fim, há o rodapé do
+            <strong>&lt;article></strong> e também da página em si (<strong>&lt;footer></strong>).
+          </p>
+          <p>A estrutura mostrada nessa figura pode ser representada no seguinte código em HTML5:</p>
+          <pre>
+              <code class="language-html">
+&lt;!DOCTYPE html>
+  &lt;html>
+      &lt;header>
+          &lt;!--Cabeçalho feral da página-->
+      &lt;/header>
+      &lt;nav>
+          &lt;!--Navegação-->
+      &lt;/nav>
+      &lt;section>
+          &lt;header>
+              &lt;!--Cabeçalho do article-->
+          &lt;/header>
+          &lt;article>
+              &lt;!--Conteúdo article-->
+          &lt;/article>
+          &lt;footer>
+              &lt;!--Rodapé article-->
+          &lt;/footer>
+      &lt;/section>
+      &lt;aside>
+          &lt;!--Conteúdo relacionado-->
+      &lt;/aside>
+      &lt;footer>
+          &lt;!--Rodapé final da página-->
+      &lt;/footer>
+  &lt;/html>
+              </code>
+            </pre>
+          <p>É importante notar que, apesar de poderem denotar regiões específicas em uma página, essas <i>tags</i>
+            não geram nenhum alinhamento ou posicionamento específico na tela. Isso é alcançado usando CSS.</p>
+          <p>Veja outro exemplo:</p>
+          <pre>
+              <code class="language-html">
+&lt;!DOCTYPE html>
+  &lt;html>
+    &lt;body>
+      &lt;h1>Nossos cursos</h1>
+        &lt;nav>
+            &lt;ul>
+                &lt;li>&lt;a href="index.html">Página Principal&lt;/a>&lt;/li>
+                &lt;li>&lt;a href="sobre.html">Sobre a Escola&lt;/a>&lt;/li>
+                &lt;li>&lt;a href="contato.html">Entre em Contato&lt;/a>&lt;/li>
+            &lt;/ul>
+        &lt;/nav>
+        &lt;main>
+        &lt;section id="tecnologia">
+        &lt;article>
+            &lt;h2>Técnico em Desenvolvimento de Sistemas&lt;/h2>
+              &lt;p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ante neque, scelerisque nec fermentum vitae, tincidunt vitae diam.&lt;/p>
+        &lt;/article>
+      
+        &lt;article>
+            &lt;h2>Técnico em Informática para a Internet&lt;/h2>
+              &lt;p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ante neque, scelerisque nec fermentum vitae, tincidunt vitae diam.&lt;/p>
+        &lt;/article>
+        &lt;/section>
+        &lt;section id="gestao">
+        &lt;article>
+            &lt;h2>Técnico em Administração&lt;/h2>
+              &lt;p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ante neque, scelerisque nec fermentum vitae, tincidunt vitae diam.&lt;/p>
+        &lt;/article>
+      
+        &lt;article>
+            &lt;h2>Técnico em Logística&lt;/h2>
+             &lt;p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ante neque, scelerisque nec fermentum vitae, tincidunt vitae diam.&lt;/p>
+        &lt;/article>
+        &lt;/section>
+        &lt;/main>
+
+    &lt;/body>
+  &lt;/html>
+              </code>
+            </pre>
+          <p>O resultado no navegador deverá ser algo como o exemplo mostrado na figura a seguir. Note que,
+            visualmente, nada acontece em específico. Porém, semanticamente, a página está mais preparada para
+            buscadores, por exemplo.</p>
+          <img src="imgs/16.png"
+            class="img-responsive center-block mt-40 imprime-menor hidden-sm hidden-xs print">
+          <p class="hidden-lg hidden-md no-print">Toque na imagem para ampliá-la.</p>
+          <a href="imgs/16.png" target="_blank"
+            class="hidden-lg hidden-md no-print"><img src="imgs/16.png"
+              class="img-responsive center-block mt-40 imprime-menor"></a>
+          <figcaption>
+            Figura 17 – Página usando tags semânticas estruturais <br>
+            Fonte: Senac EAD (2023)
+          </figcaption>
+          <p class="acessivel no-print">Página HTML resultante do código anterior.</p>
+          <p>Sempre que for possível e adequado, use <i>tags</i> semânticas para separar conteúdo. Porém, algumas
+            vezes, deseja-se apenas agrupar alguns elementos da página para algum propósito, como aplicar um estilo
+            ou reposicioná-lo na página. Para isso, é possível usar o <i>container</i> genérico
+            <strong>&lt;div></strong>. Veja, no exemplo a seguir, que elementos <strong>&lt;div></strong>, por
+            padrão, aparecem um abaixo do outro na página.
+          </p>
+          <pre>
+              <code class="language-html">
+&lt;!DOCTYPE html>
+  &lt;html>
+    &lt;body>
+      &lt;span>&lt;b>Texto à esquerda&lt;/b>&lt;/span>&lt;span>&lt;i>Texto à direita&lt;/i>&lt;/span>
+      &lt;div>
+          &lt;span>Texto no div 1&lt;/span>
+      &lt;/div>
+      &lt;div>
+          &lt;span>Texto no div 2&lt;/span>
+      &lt;/div>
+    &lt;/body>
+  &lt;/html>
+              </code>
+            </pre>
+          <p>Elementos &lt;div> serão bastante usados na estilização da página com CSS ou na aplicação de
+            ferramentas como o Bootstrap.</p>
+          <h3><i>Tag iframe</i></h3>
+          <p>Um <i>iframe</i> é uma funcionalidade disponível no HTML5 que permite executar conteúdos de outras
+            páginas dentro de um elemento da página principal. Com isso, é possível exibir documentos e vídeos
+            externos, por exemplo, dentro da página HTML principal. Implementado por meio da <i>tag</i>
+            <strong>&lt;iframe></strong>, um <i>iframe</i> tem alguns atributos básicos, como: <strong>src</strong>
+            (origem), <strong>width</strong> (largura da janela de conteúdo) e <strong>height</strong> (altura da
+            janela de conteúdo). No trecho a seguir, veja um <i>iframe</i> básico que exibe um vídeo externo dentro
+            da página principal.
+          </p>
+          <pre>
+              <code class="language-html">
+&lt;!DOCTYPE html>
+  &lt;html>
+      &lt;head>
+          &lt;title>iFrame HTML5&lt;/title>
+      &lt;/head>
+      &lt;body>
+          &lt;iframe src=https://www.youtube.com/embed/1A7VVPKHqho width=”400” height=”300”>&lt;/iframe>                
+      &lt;/body>
+  &lt;/html>
+              </code>
+            </pre>
+          <p>Na figura a seguir, veja o resultado do <i>iframe</i>, quando interpretado pelo navegador.</p>
+          <img src="imgs/17.png" class="img-responsive center-block mt-40 imprime-menor hidden-xs print">
+          <p class="hidden-lg hidden-md hidden-sm no-print">Toque na imagem para ampliá-la.</p>
+          <a target="_blank" href="imgs/17.png"
+            class="hidden-lg hidden-md hidden-sm no-print">
+            <img src="imgs/17.png"
+              class="img-responsive center-block mt-40 imprime-menor">
+          </a>
+          <figcaption>
+            Figura 18 – Visualização no navegador: <i>iframe</i> HTML5 <br>
+            Fonte: Senac EAD (2023)
+          </figcaption>
+          <p class="acessivel no-print">A imagem mostra o resultado do código implementado anteriormente, quando
+            interpretado pelo navegador, exibindo assim o vídeo externo.</p>
+        </div>
+      </div>
+      
+      <div class="pagina pagina2">
+        <!-- <div class="container"> -->
+        <p class="acessivel no-print">Como sugestão, configure a opção de leitura de caracteres e de pontuação de seu leitor de tela para o grau máximo de leitura, a fim de que os códigos disponibilizados neste material sejam lidos corretamente. No caso do NVDA (NonVisual Desktop Access), para localizar a opção Grau de pontuação/símbolos, acesse Preferências – Configurações – Fala. Altere o padrão Pouco para Tudo. Dessa forma, o leitor passará a ler os segmentos de código em sua totalidade. </p>
+        <img src="imgs/img.png" class="img-inicio no-print">
+        <div class="inicio">
+          <h2><i>Web standards</i>: padrões sugeridos pelo World Wide Web Consortium (W3C) e recomendações de boas práticas</h2>
+          <h3><i>Web standards</i>: W3C</h3>
+          <p>A história da criação do World Wide Web Consortium (W3C) começa em 1989, quando Tim Berners-Lee, um cientista da computação britânico que trabalhava no CERN, o laboratório de física de partículas na Suíça, propôs a criação de um sistema de hipertexto que permitisse o compartilhamento de informações entre cientistas em diferentes instituições. Ele desenvolveu o que hoje se conhece como a World Wide Web (WWW), que é a base da Internet moderna.</p>
+          <img src="imgs/figura_1.png" class="center-block img-responsive hidden-sm hidden-xs print size-limit">
+          <p class="no-print visible-sm visible-xs" aria-hidden="true">Toque na imagem para ampliá-la.</p>
+          <a href="imgs/figura_1.png" target="_blank" class="no-print visible-sm visible-xs" aria-hidden="true"><img src="imgs/figura_1.png" class="center-block img-responsive"></a>
+          <figcaption>
+            Figura 1 – Tim Berners-Lee, criador da WWW<br>
+            Fonte: Tietz (2018)
+          </figcaption>
+          <p class="acessivel no-print">Na imagem, à esquerda, Tim Berners-Lee e, à esquerda, um monitor de computador do tipo CRT com algumas páginas web abertas.</p>
+        </div>
+        <p>No início dos anos 1990, a popularidade da <i>web</i> cresceu rapidamente e surgiram muitos navegadores e servidores <i>web</i> diferentes, cada um com as próprias tecnologias e os próprios recursos. Isso tornou difícil para os desenvolvedores criar <i>sites</i> que funcionassem bem em todos os navegadores e dispositivos.</p>
+        <p>Para abordar esse problema, Tim Berners-Lee fundou o <strong>W3C</strong>, em 1994, consórcio composto de empresas, organizações e indivíduos que trabalham juntos para desenvolver padrões abertos e tecnologias para a <i>web</i>. A missão do W3C é liderar a <i>web</i> para a sua plena potencialidade, desenvolvendo protocolos e diretrizes que promovam sua evolução e garantam sua acessibilidade a todos.</p>
+        <img src="imgs/figura_2.png" class="center-block img-responsive hidden-sm hidden-xs print size-limit">
+        <p class="no-print visible-sm visible-xs" aria-hidden="true">Toque na imagem para ampliá-la.</p>
+        <a href="imgs/figura_2.png" target="_blank" class="no-print visible-sm visible-xs" aria-hidden="true"><img src="imgs/figura_2.png" class="center-block img-responsive"></a>
+        <figcaption>
+          Figura 2 – O primeiro servidor <i>web</i> (no adesivo, é possível ver a mensagem “This machine is a server, do not power down”, em uma tradução livre, “Esta máquina é um servidor, não desligar”).<br>
+          Fonte: Wikipédia (2005)
+        </figcaption>
+        <p class="acessivel no-print">Na imagem, um gabinete de servidor do tipo NEXT e um monitor de computador do tipo CRT, ambos na cor preta. No Gabinete do servidor, um adesivo colado por Tim Berners-Lee que diz: “This machine is a server, DO NOT POWER DOWN!!”, em uma tradução livre, “Esta máquina é um servidor, NÃO DESLIGAR!!”.</p>
+        <p>Ao longo dos anos, o W3C desenvolveu muitas especificações técnicas importantes, como o HTML (<i>hypertext markup language</i>), CSS (<i>cascading style sheets</i>), XML (<i>extensible markup language</i>), entre outros. Esses padrões ajudaram a tornar a <i>web</i> mais acessível e aprimoraram a experiência do usuário. A W3C também é uma organização ativa em questões de privacidade e segurança na <i>web</i>.</p>
+        <p>Em resumo, a W3C é uma organização líder no desenvolvimento de padrões para a <i>web</i>. Por meio de suas especificações técnicas e recomendações de boas práticas, a W3C ajuda a garantir que a <i>web</i> seja acessível, usável e interoperável em todos os dispositivos e navegadores.</p>
+        <p><i>Web standards</i> (ou padrões <i>web</i>) são um conjunto de especificações técnicas e diretrizes que definem as melhores práticas para a criação de <i>sites</i> e aplicativos <i>web</i>. </p>
+        <p>Veja, a seguir, alguns dos padrões mais importantes desenvolvidos pela W3C.</p>
+        <div class="no-print" aria-hidden="true">
+          <p>Clique ou toque para visualizar o conteúdo.</p>
+          <div class="panel-group" id="accordion21" role="tablist" aria-multiselectable="true">
+            <div class="panel panel-default">
+              <div class="panel-heading" role="tab" id="headingOne21">
+                <h4 class="panel-title">
+                  <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne21" aria-expanded="true" aria-controls="collapseOne21">
+                    HTML
+                  </a>
+                </h4>
+              </div>
+              <div id="collapseOne21" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne21">
+                <div class="panel-body">
+                  <p>A linguagem de marcação de hipertexto (HTML) é usada para estruturar e exibir conteúdo na <i>web</i>. O W3C estabelece as especificações para a versão mais recente do HTML, que é o HTML5.</p>
+                </div>
+              </div>
+            </div>
+            <div class="panel panel-default">
+              <div class="panel-heading" role="tab" id="headingTwo22">
+                <h4 class="panel-title">
+                  <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo22" aria-expanded="false" aria-controls="collapseTwo22">
+                    CSS 
+                  </a>
+                </h4>
+              </div>
+              <div id="collapseTwo22" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo22">
+                <div class="panel-body">
+                  <p>As folhas de estilo em cascata (CSS) são usadas para definir o <i>layout</i> e o estilo de um <i>site</i>. O W3C estabelece as especificações para a versão mais recente do CSS, que é o CSS3.</p>
+                </div>
+              </div>
+            </div>
+            <div class="panel panel-default">
+              <div class="panel-heading" role="tab" id="headingThree23">
+                <h4 class="panel-title">
+                  <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree23" aria-expanded="false" aria-controls="collapseThree23">
+                    JavaScript 
+                  </a>
+                </h4>
+              </div>
+              <div id="collapseThree23" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree23">
+                <div class="panel-body">
+                  <p>A linguagem de programação JavaScript é usada para adicionar interatividade a um <i>site</i>. O W3C estabelece as especificações para o JavaScript, incluindo o padrão ECMAScript.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="acessivel print">
+          <h4>HTML</h4>
+          <p>A linguagem de marcação de hipertexto (HTML) é usada para estruturar e exibir conteúdo na <i>web</i>. O W3C estabelece as especificações para a versão mais recente do HTML, que é o HTML5.</p>
+          <h4>CSS</h4>
+          <p>As folhas de estilo em cascata (CSS) são usadas para definir o <i>layout</i> e o estilo de um <i>site</i>. O W3C estabelece as especificações para a versão mais recente do CSS, que é o CSS3.</p>
+          <h4>JavaScript</h4>
+          <p>A linguagem de programação JavaScript é usada para adicionar interatividade a um <i>site</i>. O W3C estabelece as especificações para o JavaScript, incluindo o padrão ECMAScript.</p>
+        </div>
+        <p>Além desses padrões, a W3C também desenvolve especificações para outras tecnologias <i>web</i>, como XML, SVG (<i>scalable vector graphics</i>), e <i>web accessibility</i> (acessibilidade na <i>web</i>).</p>
+        <p>A importância dos <i>web standards</i> reside na sua capacidade de permitir que desenvolvedores criem <i>sites</i> e aplicativos <i>web</i> acessíveis, usáveis e interoperáveis. Ao seguir esses padrões, os desenvolvedores podem garantir que seus <i>sites</i> sejam mais compatíveis com diferentes navegadores e dispositivos, além de melhorar a experiência do usuário.</p>
+
+        <h4>Boas práticas de uso para os padrões W3C</h4>
+        <ol>
+          <li>Use HTML semântico – O HTML semântico é uma prática que envolve o uso de elementos HTML para fornecer significado e estrutura ao conteúdo de uma página da <i>web</i>. Isso torna o conteúdo mais fácil de ler e entender para os usuários e também ajuda os mecanismos de busca a entenderem o que é importante em uma página. Sempre que possível, use <i>tags</i> HTML apropriadas, como <strong>&lt;header></strong>, <strong>&lt;main></strong>, <strong>&lt;section></strong>, <strong>&lt;article></strong>, <strong>&lt;nav></strong> e <strong>&lt;footer></strong> para estruturar o conteúdo da sua página.</li>
+          <li>Valide o seu código – A validação de código é um processo que verifica se o HTML, CSS e JavaScript são escritos de acordo com as especificações da W3C. Isso ajuda a garantir que seus <i>sites</i> sejam acessíveis e compatíveis com diferentes navegadores e dispositivos. Você pode usar ferramentas <i>on-line</i>, como o validador W3C, para verificar se o seu código é válido.</li>
+          <li>Use CSS para estilizar seu <em>site</em> – O CSS é uma linguagem de estilo que permite definir a aparência do seu <em>site</em>. Use CSS para criar <em>layouts</em> responsivos, tornar seu <em>site</em> acessível para usuários com deficiência visual e para manter a consistência visual em todo ele.</li>
+          <li>Certifique-se de que seu <i>site</i> seja acessível – A acessibilidade na <i>web</i> é importante para garantir que todos os usuários possam acessar e interagir com seu <i>site</i>. Siga as diretrizes de acessibilidade da W3C, como o <i>Web Content Accessibility Guidelines</i> (WCAG), para garantir que seu <i>site</i> seja acessível para usuários com deficiências visuais, auditivas ou motoras.</li>
+          <li>Teste seu <i>site</i> em diferentes navegadores e dispositivos – Para garantir que seu <i>site</i> seja compatível com diferentes navegadores e dispositivos, teste-o em diferentes plataformas e dispositivos. Isso ajuda a identificar problemas e corrigi-los antes que os usuários encontrem problemas ao acessar seu <i>site</i>.</li>
+          <li>
+            <br>
+            <img src="imgs/figura_3.png" class="center-block img-responsive hidden-sm hidden-xs print">
+            <p class="no-print visible-sm visible-xs" aria-hidden="true">Toque na imagem para ampliá-la.</p>
+            <a href="imgs/figura_3.png" target="_blank" class="no-print visible-sm visible-xs" aria-hidden="true"><img src="imgs/figura_3.png" class="center-block img-responsive"></a>
+            <figcaption>
+              Figura 3 – Um mesmo <i>site</i> aberto em dois navegadores diferentes<br>
+              Fonte: adaptado de TechHut (c2023)
+            </figcaption>
+            <p class="acessivel no-print">Na imagem, um mesmo site (https://www.techhut.com.br/) aberto em dois navegadores diferentes, à esquerda o navegador Microsoft-Edge e à direita o navegador Firefox. É possível ver que a renderização e o espaçamento do topo do site com os artigos abaixo encontram-se diferentes.</p>
+            <p>Seguir as recomendações de boas práticas acima pode ajudar a garantir que seu <i>site</i> seja acessível, usável e compatível com diferentes navegadores e dispositivos. Além disso, essas práticas podem melhorar a experiência do usuário e tornar seu <i>site</i> mais atraente e profissional.</p>
+            <p>Ao escrever seus códigos usando as recomendações da W3C, é possível levar em consideração as seguintes boas práticas de escrita de código e indentação para HTML, CSS e JavaScript.</p>
+          </li>
+        </ol>
+
+        <h4>Boas práticas em HTML</h4>
+        <ul>
+          <li>Use <i>tags</i> semânticas apropriadas para descrever o conteúdo. Por exemplo, use <strong>&lt;header></strong>, <strong>&lt;nav></strong>, <strong>&lt;main></strong> e <strong>&lt;footer></strong> em vez de <strong>&lt;div></strong>.</li>
+          <li>Use aspas duplas para atributos de <i>tag</i> em vez de aspas simples.</li>
+          <li>Inclua um <strong>alt</strong> em todas as imagens, para garantir que usuários com deficiência visual possam entender o conteúdo da imagem.</li>
+          <li>Use indentação consistente para tornar o código mais fácil de ler.</li>
+        </ul>
+        <pre>
+          <code class="language-html">
+&lt;!DOCTYPE html>
+&lt;html>
+&lt;head>
+  &lt;title>Minha página&lt;/title>
+&lt;/head>
+&lt;body>
+  &lt;header>
+    &lt;h1>Minha Página&lt;/h1>
+  &lt;/header>
+  &lt;nav>
+    &lt;ul>
+      &lt;li>
+        &lt;a href="#">Página Inicial&lt;/a>
+      &lt;/li>
+      &lt;li>
+        &lt;a href="#">Sobre Nós&lt;/a>
+      &lt;/li>
+      &lt;li>
+        &lt;a href="#">Contato&lt;/a>
+      &lt;/li>
+    &lt;/ul>
+  &lt;/nav>
+  &lt;main>
+    &lt;h2>Sobre Nós&lt;/h2>
+    &lt;p>...&lt;/p>
+  &lt;/main>
+  &lt;footer>
+    &lt;p>&copy; 2023 - Todos os direitos reservados&lt;/p>
+  &lt;/footer>
+&lt;/body>
+&lt;/html>
+          </code>
+        </pre>
+
+        <h4>Boas práticas em CSS</h4>
+        <ul>
+          <li>Use nomes descritivos para classes e IDs, em vez de nomes genéricos.</li>
+          <li>Use a cascata do CSS para evitar repetição de estilos.</li>
+          <li>Comente seu código para ajudar a descrever o que faz cada seletor.</li>
+        </ul>
+        <p>Exemplo:</p>
+        <pre>
+          <code class="language-css">
+/* Estilos para a navegação */
+nav {
+background-color: #333;
+color: #fff;
+padding: 10px;
+}
+
+navul {
+list-style: none;
+margin: 0;
+padding: 0;
+}
+
+navli {
+display: inline-block;
+}
+
+nava {
+color: #fff;
+text-decoration: none;
+padding: 10px;
+}
+
+/* Estilos para o cabeçalho */
+header {
+background-image: url('header-bg.jpg');
+height: 200px;
+background-size: cover;
+}                
+          </code>
+        </pre>
+
+        <h4>Boas práticas em JavaScript</h4>
+        <ul>
+          <li>Use nomes descritivos para variáveis e funções.</li>
+          <li>Use <strong>const</strong> e <strong>let</strong> em vez de <strong>var</strong> ao declarar variáveis e constantes para evitar problemas com escopo.</li>
+          <li>Use espaços em branco para tornar o código mais legível.</li>
+        </ul>
+        <p>Exemplo:</p>
+        <pre>
+          <code class="language-js">
+const lista = [1, 2, 3, 4];
+
+functionsomarLista(lista) {
+  let soma = 0;
+  for (let i = 0; i &lt; lista.length; i++) {
+      soma += lista[i];
+  }
+  return soma;
+}
+          </code>
+        </pre>
+
+        <h4>Validador de código W3C</h4>
+        <p>O validador de código HTML do W3C é uma ferramenta muito útil para verificar se o seu código HTML está seguindo os padrões recomendados e se está livre de erros. Aqui está um guia passo a passo para usar o validador:</p>
+        <ol>
+          <li>Acesse o <i>site</i> do validador de código HTML do W3C (para isso, pesquise por “Validator W3” em seu buscador).</li>
+          <li>
+            Na seção <strong>Validated By Direct Input</strong>, cole seu código HTML no campo de texto. Para testar nesse momento, use o seguinte código HTML, que contém inconsistências (você consegue apontar algumas delas antes da análise?):<br>
+            <pre>
+              <code class="language-html">
+&lt;!DOCTYPE html>
+&lt;html>
+&lt;head>
+  &lt;title>Testes em páginas&lt;/title>
+  &lt;meta charset="utf-8">
+&lt;/head>
+&lt;body>
+  &lt;main>
+    &lt;center>&lt;h1>Artigos&lt;/h1>&lt;/center>
+    &lt;article id="artigo">
+        &lt;h2>Título do artigo 1&lt;/h2>
+        &lt;img src="imagem-320x213.jpg" alt="teste">
+        &lt;p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sodales elit vel massa cursus, at varius nisl feugiat. Quisque vitae justo vitae nulla sollicitudin ullamcorper. Fusce eu dui vulputate, aliquet mauris vel, ultricies mauris.
+        &lt;/p>
+        &lt;/p>
+    &lt;/article>
+    &lt;article id="artigo">
+        &lt;h2>Título do artigo 2&lt;/h2>
+        &lt;img src="imagem-320x213.jpg">
+        &lt;p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sodales elit vel massa cursus, at varius nisl feugiat. Quisque vitae justo vitae nulla sollicitudin ullamcorper. Fusce eu dui vulputate, aliquet mauris vel, ultricies mauris.
+        &lt;/p>
+    &lt;/article>
+&lt;/body>
+&lt;/html>
+              </code>
+            </pre>
+            <br>
+            <img src="imgs/figura_4.png" class="center-block img-responsive hidden-sm hidden-xs print">
+            <p class="no-print visible-sm visible-xs" aria-hidden="true">Toque na imagem para ampliá-la.</p>
+            <a href="imgs/figura_4.png" target="_blank" class="no-print visible-sm visible-xs" aria-hidden="true"><img src="imgs/figura_4.png" class="center-block img-responsive"></a>
+            <figcaption>
+              Figura 4 – Validando código no <i>site</i> do W3C<br>
+              Fonte: Senac EAD (2023)
+            </figcaption>
+            <p class="acessivel no-print">Página mostra aba “Validate by Direct Input” em destaque, com HTML proposto já colado em uma área de texto abaixo. Abaixo, um botão “Check”.</p>
+          </li>
+          <li>Clique no botão <strong>Check</strong>.</li>
+          <li>
+            O validador analisará o seu código e mostrará uma lista de erros, avisos e informações no painel de resultados.<br>
+            <img src="imgs/figura_5.png" class="center-block img-responsive hidden-sm hidden-xs print">
+            <p class="no-print visible-sm visible-xs" aria-hidden="true">Toque na imagem para ampliá-la.</p>
+            <a href="imgs/figura_5.png" target="_blank" class="no-print visible-sm visible-xs" aria-hidden="true"><img src="imgs/figura_5.png" class="center-block img-responsive"></a>
+            <figcaption>
+              Figura 5 – Erros encontrados pelo validador<br>
+              Fonte: Senac EAD (2023)
+            </figcaption>
+            <p class="acessivel no-print">Página com variadas mensagens de erro, listadas em detalhe a seguir no texto.</p>
+          </li>
+        </ol>
+        <p>Veja algumas dicas para ajudar você a entender os resultados:</p>
+        <div class="caixa-destaque-livre">
+          <ul>
+            <li>Os erros são problemas que devem ser corrigidos, pois impedem que o seu código seja interpretado corretamente pelos navegadores.</li>
+            <li>Os avisos são problemas que devem ser analisados, mas podem ser ignorados em alguns casos.</li>
+            <li>As informações fornecem dicas e sugestões para melhorar o seu código.</li>
+          </ul>
+        </div>
+        <p>Os erros que o validador gera com base no código de teste de HTML apresentado anteriormente são os seguintes (em tradução livre):</p>
+        <div class="caixa-destaque-livre">
+          <p>Alerta: “Considere adicionar atributo <strong>lang</strong> à <i>tag</i> <strong>html</strong> para declarar a linguagem deste documento”. Incluir <strong>&lt;html lang="pt-br"></strong>, por exemplo, ajuda na indexação das páginas, mas não é algo obrigatório.</p>
+          <p>Erro: “Elemento <strong>center</strong> é obsoleto”. A <i>tag</i> <strong>&lt;center></strong> era usada no HTML4, mas na versão nova foi abolida.</p>
+          <p>Erro: “Nenhum elemento <strong>p</strong> no escopo, mas um fechamento de <strong>p</strong> detectado”. O validador refere-se à linha 15 do código, em que há um <strong>&lt;/p></strong> sem um <strong>&lt;p></strong> correspondente.</p>
+          <p>Erro: “ID <strong>artigo</strong> duplicado”. De fato, note que ambos os elementos <strong>&lt;article></strong> do código estão com o mesmo valor para o atributo <strong>id</strong>.</p>
+          <p>Alerta: “A primeira ocorrência de <strong>artigo</strong> é aqui”. O validador está apenas indicando em qual linha está o primeiro elemento com o id “artigo”.</p>
+          <p>Erro: “Um elemento <strong>img</strong> deve ter um atributo <strong>alt</strong>, exceto em certas condições”. Está se referindo à <i>tag</i> <strong>&lt;img></strong> da linha 19, em que não há atributo <strong>alt</strong> preenchido.</p>
+          <p>Erro: <i>“Tag</i> de fechamento <strong>body</strong> detectada, mas há elementos não fechados”. O problema aqui acontece diretamente por conta do erro seguinte.</p>
+          <p>Erro: “Elemento <strong>main</strong> não fechado”. Repare que, no código, omitiu-se <strong>&lt;/main></strong>, o que gerou este erro e o anterior.</p>
+        </div>
+        <div class="caixa-destaque icone-desafio">
+          <p>Corrija os erros e alertas apontados pelo validador W3C para o código HTML proposto e submeta novamente o código ao validador.</p>
+        </div>
+        <p>Quando tiver um código livre de qualquer erro e de qualquer observação, você verá a seguinte mensagem na tela:</p>
+        <div class="caixa-destaque"><p><strong>Document checking completed. No errors or warnings to show.</strong></p></div>
+        <p>Traduzindo a mensagem: “Checagem do documento completa. Sem erros ou alertas para mostrar”.</p>
+        <div class="caixa-destaque-livre icone-importante">
+          <p>Lembre-se de que o validador é uma ferramenta importante, mas não é a única que você deve usar para garantir a qualidade do seu código. É importante sempre escrever código claro e organizado, seguindo as boas práticas recomendadas.</p>
+        </div>
+
+        <h3><i>Search engine optimization</i></h3>
+        <p>O SEO (<i>search engine optimization</i>) é um conjunto de técnicas que tem como objetivo melhorar a visibilidade e o posicionamento de um <i>site</i> nos resultados de busca do Google e de outros buscadores. Uma das técnicas de SEO mais importantes é o uso de <i>metatags</i> no código HTML do <i>site</i>, especialmente a <i>metatag</i> <strong>description</strong> e a <i>metatag</i> <strong>keywords</strong>.</p>
+        <p>A <i>metatag</i> <strong>description</strong> é um resumo do conteúdo da página, que é exibido nos resultados de busca. É importante escrever uma descrição concisa, clara e atraente, com até 160 caracteres. Para incluir a <i>metatag</i> <strong>description</strong> em seu <i>site</i>, adicione o seguinte código HTML entre as <i>tags</i> <strong>&lt;head></strong> e <strong>&lt;/head></strong>:</p>
+        <pre>
+          <code class="language-html">
+&lt;meta name="description" content="Insira aqui uma descrição clara e concisa do conteúdo da sua página.">
+          </code>
+        </pre>
+        <p>A <i>metatag</i> <strong>keywords</strong> é uma lista de palavras-chave relevantes para o conteúdo da página. Embora ela não seja mais usada pelos principais mecanismos de busca, ainda pode ser útil para algumas plataformas de busca menos conhecidas. </p>
+        <p>Além do conhecido Google, há algumas plataformas de busca menos conhecidas, por exemplo: Ecosia, DuckDuckGo, Bing, Yahoo e Ask.com.</p>
+        <p>Para incluir a <i>metatag</i> <strong>keywords</strong> em seu <i>site</i>, adicione o seguinte código HTML entre as <i>tags</i> <strong>&lt;head></strong> e <strong>&lt;/head></strong>:</p>
+        <pre>
+          <code class="language-html">
+&lt;meta name="keywords" content="Insira aqui uma lista de palavras-chave relevantes para o conteúdo da sua página.">&lt;/metaname>
+          </code>
+        </pre>
+        <p>Além das <i>metatags</i>, há algumas dicas de otimização de busca para um <i>site</i> da <i>web</i>. Veja a seguir.</p>
+        <div class="no-print" aria-hidden="true">
+          <p>Clique ou toque para visualizar o conteúdo.</p>
+          <div class="panel-group" id="accordion222" role="tablist" aria-multiselectable="true">
+            <div class="panel panel-default">
+              <div class="panel-heading" role="tab" id="heading4221">
+                <h4 class="panel-title">
+                  <a role="button" data-toggle="collapse" data-parent="#accordion222" href="#collapse4221" aria-expanded="true" aria-controls="collapse4221">
+                    Use palavras-chave relevantes
+                  </a>
+                </h4>
+              </div>
+              <div id="collapse4221" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="heading4221">
+                <div class="panel-body">
+                  <p>Escolha palavras-chave relevantes para o conteúdo da sua página e inclua-as em títulos, texto, imagens e <i>links</i> internos.</p>
+                </div>
+              </div>
+            </div>
+            <div class="panel panel-default">
+              <div class="panel-heading" role="tab" id="heading5222">
+                <h4 class="panel-title">
+                  <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion222" href="#collapse5222" aria-expanded="false" aria-controls="collapse5222">
+                    Escreva conteúdo de qualidade 
+                  </a>
+                </h4>
+              </div>
+              <div id="collapse5222" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading5222">
+                <div class="panel-body">
+                  <p>Crie conteúdo de qualidade, útil e relevante para o seu público-alvo e atualize-o regularmente.</p>
+                </div>
+              </div>
+            </div>
+            <div class="panel panel-default">
+              <div class="panel-heading" role="tab" id="heading6223">
+                <h4 class="panel-title">
+                  <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion222" href="#collapse6223" aria-expanded="false" aria-controls="collapse6223">
+                    Otimize as imagens 
+                  </a>
+                </h4>
+              </div>
+              <div id="collapse6223" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading6223">
+                <div class="panel-body">
+                  <p>Use imagens de alta qualidade e otimize-as para carregar rapidamente, incluindo <i>tags</i> <strong>alt</strong> descritivas.</p>
+                </div>
+              </div>
+            </div>
+            <div class="panel panel-default">
+              <div class="panel-heading" role="tab" id="heading7224">
+                <h4 class="panel-title">
+                  <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion222" href="#collapse7224" aria-expanded="false" aria-controls="collapse7224">
+                    Use URLs descritivas
+                  </a>
+                </h4>
+              </div>
+              <div id="collapse7224" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading7224">
+                <div class="panel-body">
+                  <p>Escolha URLs (<i>uniform resource locator</i>) que descrevam claramente o conteúdo da página e use hifens para separar palavras.</p>
+                </div>
+              </div>
+            </div>
+            <div class="panel panel-default">
+              <div class="panel-heading" role="tab" id="heading8225">
+                <h4 class="panel-title">
+                  <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion222" href="#collapse8225" aria-expanded="false" aria-controls="collapse8225">
+                    Use <i>links</i> internos e externos
+                  </a>
+                </h4>
+              </div>
+              <div id="collapse8225" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading8225">
+                <div class="panel-body">
+                  <p>Use <i>links</i> internos para ajudar os visitantes a navegar no seu <i>site</i> e <i>links</i> externos para aumentar a credibilidade do seu <i>site</i> e melhorar o SEO.</p>
+                </div>
+              </div>
+            </div>
+            <div class="panel panel-default">
+              <div class="panel-heading" role="tab" id="heading9226">
+                <h4 class="panel-title">
+                  <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion222" href="#collapse9226" aria-expanded="false" aria-controls="collapse9226">
+                    Otimize o carregamento da página
+                  </a>
+                </h4>
+              </div>
+              <div id="collapse9226" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading9226">
+                <div class="panel-body">
+                  <p>Certifique-se de que o seu <i>site</i> carrega rapidamente, otimizando imagens, reduzindo o tamanho do arquivo, usando <i>caches</i>, entre outras técnicas.</p>
+                </div>
+              </div>
+            </div>
+            <div class="panel panel-default">
+              <div class="panel-heading" role="tab" id="heading10227">
+                <h4 class="panel-title">
+                  <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion222" href="#collapse10227" aria-expanded="false" aria-controls="collapse10227">
+                    Use redes sociais
+                  </a>
+                </h4>
+              </div>
+              <div id="collapse10227" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading10227">
+                <div class="panel-body">
+                  <p>Promova o seu <i>site</i> nas redes sociais para aumentar a sua visibilidade e direcionar tráfego para ele.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="acessivel print">
+          <h4>Use palavras-chave relevantes</h4>
+          <p>Escolha palavras-chave relevantes para o conteúdo da sua página e inclua-as em títulos, texto, imagens e <i>links</i> internos.</p>
+          <h4>Escreva conteúdo de qualidade</h4>
+          <p>Crie conteúdo de qualidade, útil e relevante para o seu público-alvo e atualize-o regularmente.</p>
+          <h4>Otimize as imagens</h4>
+          <p>Use imagens de alta qualidade e otimize-as para carregar rapidamente, incluindo <i>tags</i> <strong>alt</strong> descritivas.</p>
+          <h4>Use URLs descritivas</h4>
+          <p>Escolha URLs (<i>uniform resource locator</i>) que descrevam claramente o conteúdo da página e use hifens para separar palavras.</p>
+          <h4>Use <i>links</i> internos e externos</h4>
+          <p>Use <i>links</i> internos para ajudar os visitantes a navegar no seu <i>site</i> e <i>links</i> externos para aumentar a credibilidade do seu <i>site</i> e melhorar o SEO.</p>
+          <h4>Otimize o carregamento da página</h4>
+          <p>Certifique-se de que o seu <i>site</i> carrega rapidamente, otimizando imagens, reduzindo o tamanho do arquivo, usando <i>caches</i>, entre outras técnicas.</p>
+          <h4>Use redes sociais</h4>
+          <p>Promova o seu <i>site</i> nas redes sociais para aumentar a sua visibilidade e direcionar tráfego para ele.</p>
+        </div>
+        <p>Lembre-se de que o SEO é um processo contínuo e que é importante monitorar e ajustar sua estratégia de acordo com as mudanças nos algoritmos dos mecanismos de busca.</p>
+        <h3>Encerramento</h3>
+        <p class="icone-concluindo">Em resumo, você viu, neste conteúdo, vários assuntos relacionados ao desenvolvimento <i>web</i>, incluindo os padrões do W3C para HTML, CSS e JavaScript, as melhores práticas para escrever código bem estruturado e indentado e, ainda, a importância da otimização para mecanismos de busca para um <i>site</i>. Você também viu que aprender a seguir as diretrizes do W3C pode ajudar a garantir que o código do seu <i>site</i> seja consistente, acessível e compatível com vários navegadores e dispositivos. </p>
+        <p>Além disso, você viu que seguir as melhores práticas de codificação, incluindo a boa estruturação e indentação do código, pode tornar o processo de desenvolvimento mais fácil e eficiente. Por fim, você aprendeu que otimizar seu <i>site</i> para mecanismos de busca é essencial para aumentar sua visibilidade e seu alcance na <i>web</i>. Utilizando estratégias de SEO, como a adição de <i>metatags</i> ao código HTML, é possível melhorar o posicionamento do <i>site</i> nos resultados de busca e aumentar o tráfego orgânico. No geral, seguir essas práticas e recomendações pode levar a um <i>site</i> mais acessível, eficiente e eficaz na <i>web</i>.</p>
+      
+          
+        <!-- </div> -->
+      </div>
+
+
+    </section>
+    <!-- - - - - - - - - - - - - - - - não alterar abaixo- - - - - - - - - - - - -->
+    <footer class="text-center no-print">
+      
+          <ul class="pagination">
+
+          </ul>
+         
+    </footer>
+
+  </div>
+
+  </div>
+
+
+  <!-- Modais -->
+
+
+  <!-- Modais 100% -->
+
+
+  <!--  Em caso de footer personalizado utilizar esse elemento e adicionar a classe customizada
+    <footer>
+    </footer>
+	-->
+  <!-- carrega todas as imagens dos icones nesta div
+ caso queira adicionar mais imagens de novos icones do css,
+ ou qualquer imagem que deva ser contabilizada durante a fase
+ de loading, referenciar aqui.
+ -->
+  <div class="ico-div-loader">
+    <img src="../template/images/atencao.png">
+    <img src="../template/images/bg-content.jpg">
+    <img src="../template/images/bg-topo.jpg">
+    <img src="../template/images/black-zoom-in-256.png">
+    <img src="../template/images/concluindo.png">
+    <img src="../template/images/curtir.png">
+    <img src="../template/images/desafio.png">
+    <img src="../template/images/dica.png">
+    <img src="../template/images/doc.png">
+    <img src="../template/images/fundamental.png">
+    <img src="../template/images/icon-03.png">
+    <img src="../template/images/importante.png">
+    <img src="../template/images/lightbulb.png">
+    <img src="../template/images/link.png">
+    <img src="../template/images/link_pdf_hover.png">
+    <img src="../template/images/link_pdf_normal.png">
+    <img src="../template/images/logo-senac.png">
+    <img src="../template/images/mark-icon.png">
+    <img src="../template/images/mark-icon02.png">
+    <img src="../template/images/midia.png">
+    <img src="../template/images/monitor.png">
+    <img src="../template/images/nao_curtir.png">
+    <img src="../template/images/pergunta.png">
+    <img src="../template/images/pesquisa.png">
+    <img src="../template/images/play.png">
+    <img src="../template/images/radio_flat.png">
+    <img src="../template/images/refletir.png">
+    <img src="../template/images/saiba_mais.png">
+    <img src="../template/images/senac_loader.png">
+    <img src="../template/images/tanamidia.png">
+    <img src="../template/images/transcricao.png">
+    <img src="../template/images/transcricao_small.png">
+    <img src="../template/images/tv.png">
+    <img src="../template/images/tv_bottom.png">
+    <img src="../template/images/zoom.png">
+    <img src="../template/images/zoom_ie.cur">
+    <img src="../template/images/zoom_ie.png">
+    <!-- adicionar as imagens customizadas aqui abaixo -->
+  </div>
+
+
+  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+  <script src="../template/js/jquery.min.js"></script>
+  <script src="../template/js/bootstrap.min.js"></script>
+  <script src="../template/js/jquery.magnific-popup.min.js"></script>
+  <script src="../template/js/print.js"></script>
+  <script src="../template/js/template.config.js"></script>
+  <script src="../template/js/images.loader.js"></script>
+  <script src="../template/js/highlight.min.js"></script>
+  <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+  <script src="js/javascript"></script>
+
+  <noscript>
+    <style media="screen">
+      .over-loader {
+        display: none;
+      }
+    </style>
+  </noscript>
+  <script>
+    document.addEventListener('DOMContentLoaded', (event) => {
+      document.querySelectorAll('pre code').forEach((el) => {
+        hljs.highlightElement(el);
+      });
+    });
+    //inicializa zoom na imagem
+    $('.zoom-imagem').magnificPopup({
+      type: 'image',
+      mainClass: 'mfp-with-zoom', // this class is for CSS animation below
+      zoom: {
+        enabled: true, // By default it's false, so don't forget to enable it
+
+        duration: 300, // duration of the effect, in milliseconds
+        easing: 'ease-in-out', // CSS transition easing function
+
+        // The "opener" function should return the element from which popup will be zoomed in
+        // and to which popup will be scaled down
+        // By defailt it looks for an image tag:
+        opener: function (openerElement) {
+          // openerElement is the element on which popup was initialized, in this case its <a> tag
+          // you don't need to add "opener" option if this code matches your needs, it's defailt one.
+          return openerElement.is('img') ? openerElement : openerElement.find('img');
+        }
+      },
+      image: {
+        markup: '<div class="mfp-figure">' +
+          '<div class="mfp-close"></div>' +
+          '<div class="mfp-img"></div>' + // Floated left
+          '<div class="mfp-bottom-bar">' + '<figcaption>' + '<div class="mfp-title" style="text-align:center"></div>' +
+          '<div class="mfp-counter"></div>' + '</figcaption>' +
+          '</div>' +
+          '</div>', // Popup HTML markup. `.mfp-img` div will be replaced with img tag, `.mfp-close` by close button
+
+        cursor: 'mfp-zoom-out-cur', // Class that adds zoom cursor, will be added to body. Set to null to disable zoom out cursor.
+
+        tError: '<a href="%url%">A imagem</a> não pode ser carregada.' // Error message
+      }
+    });
+
+    //inicializa popover
+    $(function () {
+      $('[data-toggle="popover"]').popover()
+    })
+    //inicializa tooltip
+    $(function () {
+      $('[data-toggle="tooltip"]').tooltip()
+    })
+
+
+    $(function () {
+      $(".card").click(function () {
+        if ($(this).hasClass("exibe-frente")) {
+          $(this)
+            .children()
+            .first()
+            .hide();
+          $(this)
+            .children()
+            .last()
+            .show();
+          $(this).removeClass("exibe-frente");
+        } else {
+          $(".card .verso").hide();
+          $(".card .frente").show();
+          $(this).addClass("exibe-frente");
+        }
+      });
+    });
+
+    $(document).ready(function () {
+      $(".card .verso").hide();
+    });
+
+
+
+
+    /*------- Script de animação do botão -------*/
+    var root = document.documentElement;
+    root.className += ' js';
+
+    function boxTop(idBox) {
+      var boxOffset = $(idBox).offset().top;
+      return boxOffset;
+    }
+
+    $(document).ready(function () {
+      var $target = $('.animeStart'),
+        $target2 = $('.animeStop'),
+        targetBox = $('.box'),
+        animationClass = 'anime-init',
+        windowHeight = $(window).height(),
+        offset = windowHeight - (windowHeight / 4);
+
+      function animeScroll() {
+        var documentTop = $(document).scrollTop();
+        $target.each(function () {
+          if (documentTop > boxTop(this) - offset) {
+            targetBox.addClass(animationClass);
+          } else {
+            targetBox.removeClass(animationClass);
+          }
+          if (documentTop > boxTop($target2) - offset) {
+            targetBox.removeClass(animationClass);
+          }
+        });
+      }
+      animeScroll();
+
+      $(document).scroll(function () {
+        animeScroll();
+      });
+    });
+
+
+  </script>
+
+  <script>
+    var scriptElem = document.createElement("script");
+    scriptElem.src = "https://plugin.handtalk.me/web/latest/handtalk.min.js",
+      scriptElem.charset = "UTF-8",
+      scriptElem.onload = function () {
+        window.ht = new HT({
+          token: "bf5b7efb148a829a126a0e0c9fd533bf",
+          align: "top",
+          videoEnabled: true,
+          ytEmbedReplace: true,
+          mobileConfig: {
+            align: "right",
+            actionsAlign: "top",
+            customButtonStyle: {
+              borderRadius: "6px",
+              size: "38px",
+              horizontalMargin: "13px",
+              bottomMargin: "140px",
+              rightMargin: "40px"
+            }
+          }
+        });
+        $('.ht-skip').attr("aria-hidden", "true")
+      },
+      document.body.appendChild(scriptElem);
+  </script>
+</body>
+
+</html>
